@@ -425,7 +425,10 @@ route();
 </script></body></html>"""
 
 html = html.replace("__CSS__", css).replace("__PAYLOAD__", payload).replace("__FULLN__", str(len(full)))
-out = Path("/mnt/user-data/outputs/stocksreviewer-FULL-SITE.html")
+import os
+_default = Path(__file__).resolve().parent / "dist" / "full-site.html"
+out = Path(os.environ.get("ONEFILE_OUT", _default))
+out.parent.mkdir(parents=True, exist_ok=True)
 out.write_text(html, encoding="utf-8")
 print("wrote", out, round(out.stat().st_size/1e6, 1), "MB")
 print("full-detail companies:", len(full), "| index rows:", len(slim), "| priced:", len(prices))
