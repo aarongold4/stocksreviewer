@@ -16,6 +16,9 @@ git config http.version HTTP/1.1         # HTTP/2 is flakier for big pushes
 
 tmp="$(mktemp -d)"
 cp -r dist/. "$tmp/"
+# audit/build regenerate tracked files; discard them so the orphan switch is clean
+git checkout -- . 2>/dev/null || true
+git stash push --include-untracked --quiet -- data/ 2>/dev/null || true
 git switch --orphan deploy 2>/dev/null || { git branch -D deploy 2>/dev/null || true; git switch --orphan deploy; }
 git rm -rf . >/dev/null 2>&1 || true
 cp -r "$tmp/." .
