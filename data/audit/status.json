@@ -1,5 +1,5 @@
 {
-  "date": "2026-10-31",
+  "date": "2026-11-05",
   "ok": true,
   "blocked": false,
   "reasons": [],
@@ -9,14 +9,16 @@
   ],
   "corrections": [],
   "metrics": {
-    "companies": 5635,
-    "priced": 5352,
+    "companies": 5636,
+    "priced": 5353,
     "price_coverage": 0.9498,
-    "newest_price_as_of": "2026-10-30",
+    "newest_price_as_of": "2026-11-04",
     "churn": {
-      "added": 0,
+      "added": 1,
       "dropped": 0,
-      "added_sample": [],
+      "added_sample": [
+        "PXED"
+      ],
       "dropped_sample": []
     },
     "bad_revenue": 0,
