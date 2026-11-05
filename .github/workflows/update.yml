@@ -1,0 +1,88 @@
+name: StocksReviewer auto-update
+
+# Fully autonomous. Runs on GitHub's servers — nothing of yours needs to be on.
+#   - Nightly 09:10 UTC (05:10 ET): refresh prices, rebuild, self-audit, deploy
+#   - Weekly Sun 08:10 UTC: ALSO refresh SEC fundamentals (new 10-Q/10-K filings)
+# The self-audit (pipeline/audit.py) blocks deploy if data looks broken, and a
+# failed run emails you via GitHub. Manual run: Actions tab → Run workflow.
+
+on:
+  schedule:
+    - cron: '10 9 * * 1-6'    # Mon–Sat 09:10 UTC: prices only
+    - cron: '10 8 * * 0'      # Sunday  08:10 UTC: full (fundamentals + prices)
+  workflow_dispatch:
+    inputs:
+      mode:
+        description: 'prices, full, or build'
+        default: 'prices'
+  push:
+    branches: [main]
+    # When the daily verification task commits cleared companies / new content,
+    # rebuild+deploy from committed data (no SEC/price refetch).
+    paths:
+      - 'data/verified_overrides.json'
+      - 'templates/**'
+      - 'static/**'
+      - 'build.py'
+
+concurrency:
+  group: stocksreviewer-update
+  cancel-in-progress: false
+
+permissions:
+  contents: write   # commit refreshed data to main and push the deploy branch
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Install deps
+        run: pip install -r requirements.txt
+
+      - name: Decide mode
+        id: mode
+        run: |
+          if [ "${{ github.event_name }}" = "push" ]; then
+            echo "mode=build" >> "$GITHUB_OUTPUT"
+          elif [ "${{ github.event_name }}" = "schedule" ] && [ "${{ github.event.schedule }}" = "10 8 * * 0" ]; then
+            echo "mode=full" >> "$GITHUB_OUTPUT"
+          else
+            echo "mode=${{ github.event.inputs.mode || 'prices' }}" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Run update (refresh + self-audit + build)
+        env:
+          MODE: ${{ steps.mode.outputs.mode }}
+        run: bash scripts/run_update.sh
+
+      - name: Commit refreshed data + audit report
+        if: steps.mode.outputs.mode != 'build'
+        run: |
+          git config user.name  "stocksreviewer-bot"
+          git config user.email "noreply@anthropic.com"
+          git add data/index.json data/prices.json data/audit/ data/companies/ || true
+          git commit -m "auto-update ($(date -u +%F), ${{ steps.mode.outputs.mode }})" || echo "no changes"
+          git push || true
+
+      - name: Deploy dist to Hostinger
+        env:
+          FTP_HOST: ${{ secrets.HOSTINGER_FTP_HOST }}
+          FTP_USER: ${{ secrets.HOSTINGER_FTP_USER }}
+          FTP_PASS: ${{ secrets.HOSTINGER_FTP_PASS }}
+        run: bash scripts/deploy_dist.sh
+
+      - name: Upload audit report artifact
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: audit-report
+          path: data/audit/

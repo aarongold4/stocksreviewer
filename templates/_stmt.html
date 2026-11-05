@@ -1,0 +1,19 @@
+<div class="tbl-wrap">
+  <table>
+    <thead><tr><th class="l">USD</th>{% for y in rec.years %}<th>FY{{ y % 100 }}</th>{% endfor %}</tr></thead>
+    <tbody>
+    {% for label, vals in rows %}
+      <tr>
+        <td class="l">{{ label }}</td>
+        {% for v in vals %}
+          {% if label == 'Diluted EPS' %}
+            <td class="num">{{ v|usd }}</td>
+          {% else %}
+            <td class="num {{ 'neg' if v is not none and v<0 }}">{{ v|money }}</td>
+          {% endif %}
+        {% endfor %}
+      </tr>
+    {% endfor %}
+    </tbody>
+  </table>
+</div>

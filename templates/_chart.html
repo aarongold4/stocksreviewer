@@ -1,0 +1,29 @@
+<div class="chartbox">
+  <div class="yaxis" style="height:160px">
+    <span class="ymax">{{ chart.max|fmtval(chart.fmt) }}</span>
+    {% if chart.has_neg %}
+    <span class="yzero" style="top:{{ chart.zero }}%">0</span>
+    <span class="ymin">{{ chart.min|fmtval(chart.fmt) }}</span>
+    {% else %}
+    <span class="ymin">$0</span>
+    {% endif %}
+  </div>
+  <div class="plot">
+    <div class="bars-area" style="height:160px">
+      <div class="gl" style="top:0"></div>
+      <div class="gl gl-zero" style="top:{{ chart.zero }}%"></div>
+      {% for b in chart.bars %}
+      <div class="bcol">
+        {% if b.val is not none %}
+        <div class="bb{{ ' down' if b.neg }}" style="top:{{ b.top }}%; height:{{ b.h }}%" title="{{ b.x }}: {{ b.val|fmtval(chart.fmt) }}">
+          <span class="vl">{{ b.val|fmtval(chart.fmt) }}</span>
+        </div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+    <div class="xrow">
+      {% for b in chart.bars %}<div class="xcol">{{ b.x }}</div>{% endfor %}
+    </div>
+  </div>
+</div>

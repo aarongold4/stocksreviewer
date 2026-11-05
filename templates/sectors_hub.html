@@ -1,0 +1,17 @@
+{% extends "base.html" %}
+{% block title %}Browse Stocks by Sector & Industry (GICS) | StocksReviewer{% endblock %}
+{% block desc %}Browse US public companies by GICS sector and industry — the same classification Fidelity uses — with company counts and aggregate revenue from SEC filings.{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap">
+<span class="kick">Sectors &amp; industries</span>
+<h1 style="margin:8px 0 4px">Browse by sector</h1>
+<p class="muted">Eleven GICS sectors — the standard Fidelity and the rest of the market use — each broken into industries. Click a sector to drill into its industries.</p>
+<div class="card-grid">
+{% for s in sectors %}
+  <a class="lcard" href="/sectors/{{ s.slug }}/"><h3>{{ s.sector }}</h3>
+  <div class="muted mono" style="font-size:.78rem">{{ s.count }} companies · {{ s.industries }} industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">{{ s.total|money }} revenue</div></a>
+{% endfor %}
+</div>
+</div></section>
+{% endblock %}

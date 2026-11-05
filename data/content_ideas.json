@@ -1,0 +1,1 @@
+{"_comment": "Queue for stocksreviewer editorial guides. The daily verification task appends ideas (id, date, title, slug, search_phrase, angle, facts[{fact,source}], priority, status proposed/drafted/published/discarded, published_url). Content is secondary to verification on this site.", "ideas": []}

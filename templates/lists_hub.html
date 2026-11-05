@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}Stock Lists — Top US Companies by Fundamentals | StocksReviewer{% endblock %}
+{% block desc %}Ranked lists of US public companies by the numbers they filed: most profitable, highest margins, best return on equity, fastest-growing, strongest free cash flow.{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap">
+<span class="kick">Lists</span>
+<h1 style="margin:8px 0 4px">Top companies, by the filed numbers</h1>
+<p class="muted">Every list is built from SEC filings and recomputed each build. No opinions — just rankings on hard metrics.</p>
+<div class="card-grid">
+{% for slug, title in lists %}
+  <a class="lcard" href="/lists/{{ slug }}/"><h3>{{ title }}</h3><span class="kick">View ranking →</span></a>
+{% endfor %}
+</div>
+</div></section>
+{% endblock %}

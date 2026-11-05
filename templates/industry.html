@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}{{ industry }} Stocks ({{ sector }}) | StocksReviewer{% endblock %}
+{% block desc %}{{ industry }} companies in the {{ sector }} sector, ranked by revenue with margins, returns, and growth from SEC filings.{% endblock %}
+{% block schema %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"{{ industry }} companies","numberOfItems":{{ rows|length }}}
+</script>
+{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap">
+<nav class="crumbs"><a href="/sectors/">Sectors</a> <span>/</span> <a href="/sectors/{{ sector_slug }}/">{{ sector }}</a> <span>/</span> {{ industry }}</nav>
+<h1 style="margin:6px 0 4px">{{ industry }}</h1>
+<p class="muted">{{ rows|length }} companies in {{ sector }}, ranked by revenue.</p>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th class="l">Company</th><th>Revenue</th><th>Net income</th><th>Net margin</th><th>Gross margin</th><th>ROE</th><th>5y CAGR</th><th>Trend</th></tr></thead>
+<tbody>
+{% for r in rows %}
+<tr onclick="location.href='/stocks/{{ r.ticker|replace('/','-') }}/'" style="cursor:pointer">
+  <td class="l"><span class="t-ticker">{{ r.ticker }}</span> <span class="t-name">{{ r.name }}</span></td>
+  <td class="num">{{ r.revenue|money }}</td>
+  <td class="num {{ 'neg' if r.net_income and r.net_income<0 }}">{{ r.net_income|money }}</td>
+  <td class="num">{{ r.net_margin|pct }}</td>
+  <td class="num">{{ r.gross_margin|pct }}</td>
+  <td class="num">{{ r.roe|pct }}</td>
+  <td class="num {{ 'pos' if r.rev_cagr_5y and r.rev_cagr_5y>0 else 'neg' if r.rev_cagr_5y and r.rev_cagr_5y<0 }}">{{ r.rev_cagr_5y|pct }}</td>
+  <td class="l">{{ r.rev_spark|spark|safe }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</div></section>
+{% endblock %}

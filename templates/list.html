@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+{% block title %}{{ list_title }} ({{ year }}) | StocksReviewer{% endblock %}
+{% block desc %}{{ list_desc }} Ranked from SEC filing data, recomputed automatically. {{ rows|length }} US companies.{% endblock %}
+{% block schema %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"ItemList","name":"{{ list_title }}","numberOfItems":{{ rows|length }},
+"itemListElement":[{% for r in rows[:20] %}{"@type":"ListItem","position":{{ loop.index }},"name":"{{ r.name }}"}{{ "," if not loop.last }}{% endfor %}]}
+</script>
+{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap">
+<nav class="crumbs"><a href="/lists/">Lists</a> <span>/</span> {{ list_title }}</nav>
+<h1 style="margin:6px 0 4px">{{ list_title }}</h1>
+<p class="muted">{{ list_desc }} &nbsp;·&nbsp; {{ rows|length }} companies, FY by most recent filing.</p>
+<div class="tbl-wrap" style="margin-top:14px">
+<table>
+<thead><tr><th class="l">#</th><th class="l">Company</th><th>
+{%- if value_fmt=='money' %}Value{% elif value_fmt=='pct' %}Metric{% elif value_fmt=='usd' %}Per share{% else %}Ratio{% endif -%}
+</th><th>Revenue</th><th>Net margin</th><th>Revenue trend</th></tr></thead>
+<tbody>
+{% for r in rows %}
+<tr onclick="location.href='/stocks/{{ r.ticker|replace('/','-') }}/'" style="cursor:pointer">
+  <td class="l num muted">{{ loop.index }}</td>
+  <td class="l"><span class="t-ticker">{{ r.ticker }}</span> <span class="t-name">{{ r.name }}</span></td>
+  <td class="num"><strong>
+  {%- if value_fmt=='money' %}{{ r[value_key]|money }}{% elif value_fmt=='pct' %}{{ r[value_key]|pct }}{% elif value_fmt=='usd' %}{{ r[value_key]|usd }}{% else %}{{ r[value_key]|ratio }}{% endif -%}
+  </strong></td>
+  <td class="num">{{ r.revenue|money }}</td>
+  <td class="num">{{ r.net_margin|pct }}</td>
+  <td class="l">{{ r.rev_spark|spark|safe }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<div class="card-grid" style="margin-top:26px">
+{% for slug, title in lists %}<a class="lcard sm" href="/lists/{{ slug }}/">{{ title }} →</a>{% endfor %}
+</div>
+</div></section>
+{% endblock %}

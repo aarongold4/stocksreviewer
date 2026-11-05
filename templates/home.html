@@ -1,0 +1,58 @@
+{% extends "base.html" %}
+{% block title %}StocksReviewer — Company Fundamentals from SEC Filings{% endblock %}
+{% block desc %}Free, clean fundamental data for US public companies — revenue, earnings, cash flow, margins, and valuation — sourced directly from SEC EDGAR filings.{% endblock %}
+{% block body %}
+<section class="hero">
+  <div class="wrap">
+    <span class="kick">Sourced from SEC EDGAR · {{ total }} companies</span>
+    <h1>The numbers companies <em>actually filed</em> — not the ones they advertised.</h1>
+    <p>Revenue, earnings, cash flow, margins, returns, and a transparent valuation model for US public companies. Pulled straight from XBRL filings, recomputed in the open, free to read.</p>
+    <div class="searchbox">
+      <input type="text" id="q2" placeholder="Search a ticker or company — AAPL, Walmart, Tesla…" autocomplete="off">
+      <div class="results" id="results2"></div>
+    </div>
+    <div class="hero-stats">
+      <div><div class="n">{{ total }}</div><div class="l">Companies (this build)</div></div>
+      <div><div class="n">12yr</div><div class="l">Annual history</div></div>
+      <div><div class="n">$0</div><div class="l">Public-domain data</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="panel-head"><h2 style="margin:0">Largest companies by revenue</h2><a href="/screener/" class="kick">Open screener →</a></div>
+    <div class="tbl-wrap" style="margin-top:14px">
+      <table>
+        <thead><tr>
+          <th class="l">Company</th><th>Revenue (FY)</th><th>Net income</th>
+          <th>Net margin</th><th>ROE</th><th>5y rev CAGR</th><th>Diluted EPS</th>
+        </tr></thead>
+        <tbody>
+        {% for r in movers %}
+          <tr onclick="location.href='/stocks/{{ r.ticker|replace('/','-') }}/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">{{ r.ticker }}</span> <span class="t-name">{{ r.name }}</span></td>
+            <td class="num">{{ r.revenue|money }}</td>
+            <td class="num {{ 'neg' if r.net_income and r.net_income<0 }}">{{ r.net_income|money }}</td>
+            <td class="num">{{ r.net_margin|pct }}</td>
+            <td class="num">{{ r.roe|pct }}</td>
+            <td class="num {{ 'pos' if r.rev_cagr_5y and r.rev_cagr_5y>0 else 'neg' if r.rev_cagr_5y and r.rev_cagr_5y<0 }}">{{ r.rev_cagr_5y|pct }}</td>
+            <td class="num">{{ r.eps|usd }}</td>
+          </tr>
+        {% endfor %}
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap narrow">
+    <span class="kick">Why this exists</span>
+    <h2 style="margin-top:8px">Primary-source fundamentals, not repackaged vendor data</h2>
+    <p>Most finance sites license their numbers from data vendors whose terms forbid redistribution — so you pay, or you get a thin free tier. StocksReviewer reads the same underlying source those vendors do: the structured XBRL data every US public company files with the SEC. That data is public domain, which is why this site can show it all, for free.</p>
+    <p>Every figure traces to a 10-K or 10-Q. The ratios, growth rates, and valuation model are computed in the open and <a href="/methodology/">documented here</a>. Price charts come from TradingView; everything else is filings.</p>
+  </div>
+</section>
+{% endblock %}
+{% block scripts %}<script>window.HERO_SEARCH=true;</script>{% endblock %}

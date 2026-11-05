@@ -1,0 +1,200 @@
+{% extends "base.html" %}
+{% set L = rec.latest %}
+{% set M = rec.metrics %}
+{% block title %}{{ rec.ticker }} — {{ rec.name }} Fundamentals & Financials | StocksReviewer{% endblock %}
+{% block desc %}{{ rec.name }} ({{ rec.ticker }}) financial data from SEC filings: revenue {{ L.revenue|money }}, net income {{ L.net_income|money }}, margins, returns, cash flow, and a transparent DCF estimate. FY{{ L.fy }}.{% endblock %}
+{% block schema %}
+<script type="application/ld+json">
+{"@context":"https://schema.org","@type":"Corporation","name":"{{ rec.name }}","tickerSymbol":"{{ rec.ticker }}","identifier":"CIK{{ rec.cik }}"}
+</script>
+{% endblock %}
+{% block body %}
+<div class="stock-head">
+  <div class="wrap">
+    <div class="sh-id">
+      <span class="tk">{{ rec.ticker }}</span>
+      <h1>{{ rec.name }}</h1>
+      <div class="sub">{{ rec.exchange }} · <a href="/sectors/{{ sector_slug }}/">{{ rec.sector }}</a> · {{ rec.industry }}{% if rec.fiscal_year_end %} · FY ends {{ rec.fiscal_year_end[:2] }}/{{ rec.fiscal_year_end[2:] }}{% endif %} · CIK {{ rec.cik }}</div>
+    </div>
+    <div class="sh-badges">
+      <span class="badge">FY{{ L.fy }} reported</span>
+      {% if M.net_margin and M.net_margin>0 %}<span class="badge g">Profitable</span>{% endif %}
+      {% if M.rev_cagr_5y and M.rev_cagr_5y>0.1 %}<span class="badge g">5y rev +{{ M.rev_cagr_5y|pct(0) }}</span>{% endif %}
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="kpi-grid">
+    <div class="kpi"><div class="l">Revenue FY{{ L.fy }}</div><div class="v">{{ L.revenue|money }}</div></div>
+    <div class="kpi"><div class="l">Net income</div><div class="v {{ 'neg' if L.net_income and L.net_income<0 }}">{{ L.net_income|money }}</div></div>
+    <div class="kpi"><div class="l">Diluted EPS</div><div class="v">{{ L.eps_diluted|usd }}</div></div>
+    <div class="kpi"><div class="l">Net margin</div><div class="v">{{ M.net_margin|pct }}</div></div>
+    <div class="kpi"><div class="l">Free cash flow</div><div class="v {{ 'neg' if L.fcf and L.fcf<0 }}">{{ L.fcf|money }}</div></div>
+    <div class="kpi"><div class="l">ROE</div><div class="v">{{ M.roe|pct }}</div></div>
+  </div>
+
+  {% if rec.ttm and rec.ttm.revenue %}
+  <div class="ttm-strip">
+    <div class="ttm-tag">Trailing 12 months <span class="muted">· through {{ rec.ttm.as_of }}</span></div>
+    <div class="ttm-vals">
+      <div><span class="l">Revenue</span><span class="v">{{ rec.ttm.revenue|money }}</span></div>
+      <div><span class="l">Net income</span><span class="v {{ 'neg' if rec.ttm.net_income and rec.ttm.net_income<0 }}">{{ rec.ttm.net_income|money }}</span></div>
+      <div><span class="l">Diluted EPS</span><span class="v">{{ rec.ttm.eps_diluted|usd }}</span></div>
+      <div><span class="l">Net margin</span><span class="v">{{ rec.ttm.net_margin|pct }}</span></div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- price chart: TradingView free widget -->
+  <div class="panel-head"><h2 style="margin:0">Price</h2><span class="muted" style="font-size:.8rem">via TradingView</span></div>
+  <div class="tv-embed">
+    <div class="tv-widget"><div id="tv_chart" style="height:420px"></div></div>
+  </div>
+
+  {% if perf %}
+  <div class="panel">
+    <div class="panel-head"><h2 style="margin:0">Price performance</h2><span class="muted" style="font-size:.8rem">total return · as of {{ perf.as_of }}</span></div>
+    <div class="perf-grid">
+      {% for label in ['5-day','10-day','1-month','3-month','6-month','YTD','1-year','2-year','5-year','10-year'] %}
+      {% set v = perf[label] %}
+      <div class="perf-row">
+        <span class="perf-l">{{ label }}</span>
+        <span class="perf-v {{ 'pos' if v is not none and v>0 else 'neg' if v is not none and v<0 }}">{% if v is none %}—{% else %}{{ '+' if v>0 }}{{ '%.2f'|format(v) }}%{% endif %}</span>
+      </div>
+      {% endfor %}
+    </div>
+    <p class="skip-note muted" style="font-size:.78rem;margin-top:10px">Split- and dividend-adjusted total return, computed from trailing-date closing prices as of the date shown. Other sources may differ slightly by date convention.</p>
+  </div>
+  {% endif %}
+
+  <div class="panel">
+    <div class="panel-head"><h2 style="margin:0">Revenue</h2><span class="muted" style="font-size:.8rem">{{ rec.years[0] }}–{{ rec.years[-1] }}, USD</span></div>
+    {% set chart = rev_chart %}{% include "_chart.html" %}
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><h2 style="margin:0">Net income</h2><span class="muted" style="font-size:.8rem">USD</span></div>
+    {% set chart = ni_chart %}{% include "_chart.html" %}
+  </div>
+
+  <div class="panel">
+    <div class="panel-head"><h2 style="margin:0">Free cash flow</h2><span class="muted" style="font-size:.8rem">operating CF − capex</span></div>
+    {% set chart = fcf_chart %}{% include "_chart.html" %}
+  </div>
+
+  {% if q_rev_chart %}
+  <div class="panel">
+    <div class="panel-head"><h2 style="margin:0">Quarterly revenue</h2><span class="muted" style="font-size:.8rem">last {{ q_rev_chart.bars|length }} quarters · Q4 derived from annual</span></div>
+    {% set chart = q_rev_chart %}{% include "_chart.html" %}
+  </div>
+  {% endif %}
+  {% if q_eps_chart %}
+  <div class="panel">
+    <div class="panel-head"><h2 style="margin:0">Quarterly diluted EPS</h2><span class="muted" style="font-size:.8rem">USD per share</span></div>
+    {% set chart = q_eps_chart %}{% include "_chart.html" %}
+  </div>
+  {% endif %}
+
+  <!-- DCF -->
+  {% if rec.dcf %}
+  <div class="panel">
+    <div class="panel-head"><h2 style="margin:0">Valuation — DCF estimate</h2></div>
+    <div class="dcf-box">
+      <div><div class="big">{{ rec.dcf.intrinsic_per_share|usd }}</div><div class="muted" style="font-size:.74rem">intrinsic value / share</div></div>
+      <div class="note">Two-stage discounted cash flow from FY{{ L.fy }} free cash flow of {{ rec.dcf.assumptions.base_fcf|money }}, growing {{ rec.dcf.assumptions.growth_5y|pct }} for 5 years then {{ rec.dcf.assumptions.terminal_growth|pct }} terminally, discounted at {{ rec.dcf.assumptions.discount_rate|pct }}. Compare this to the live price above. A model is only as good as its assumptions — treat it as a starting point, not a target.</div>
+    </div>
+  </div>
+  {% endif %}
+
+  <!-- statements -->
+  <div class="panel">
+    <h2 style="margin-top:0">Income statement</h2>
+    {% set rows = income_rows %}{% include "_stmt.html" %}
+  </div>
+  <div class="panel">
+    <h2 style="margin-top:0">Balance sheet</h2>
+    {% set rows = balance_rows %}{% include "_stmt.html" %}
+  </div>
+  <div class="panel">
+    <h2 style="margin-top:0">Cash flow</h2>
+    {% set rows = cash_rows %}{% include "_stmt.html" %}
+  </div>
+
+  <!-- per-share trends -->
+  <div class="panel">
+    <h2 style="margin-top:0">Per-share trends</h2>
+    <div class="ps-grid">
+      <div class="ps-cell">
+        <div class="ps-h">Diluted EPS <span>{{ L.eps_diluted|usd }}</span></div>
+        {% if eps_chart %}<div class="series sm">{% for b in eps_chart.bars %}<div class="bar {{ 'negv' if b.neg }}" style="height:{{ b.h }}%" title="{{ b.x }}: {{ b.val|usd }}"></div>{% endfor %}</div>{% endif %}
+      </div>
+      <div class="ps-cell">
+        <div class="ps-h">Book value / share <span>{{ M.book_value_per_share|usd }}</span></div>
+        {% if bvps_chart %}<div class="series sm">{% for b in bvps_chart.bars %}<div class="bar {{ 'negv' if b.neg }}" style="height:{{ b.h }}%" title="{{ b.x }}: {{ b.val|usd }}"></div>{% endfor %}</div>{% endif %}
+      </div>
+      <div class="ps-cell">
+        <div class="ps-h">Free cash flow / share <span>{{ M.fcf_per_share|usd }}</span></div>
+        {% if fcfps_chart %}<div class="series sm">{% for b in fcfps_chart.bars %}<div class="bar {{ 'negv' if b.neg }}" style="height:{{ b.h }}%" title="{{ b.x }}: {{ b.val|usd }}"></div>{% endfor %}</div>{% endif %}
+      </div>
+      {% if dps_chart %}
+      <div class="ps-cell">
+        <div class="ps-h">Dividend / share <span>{{ M.dividend_per_share|usd }}</span></div>
+        <div class="series sm">{% for b in dps_chart.bars %}<div class="bar" style="height:{{ b.h }}%" title="{{ b.x }}: {{ b.val|usd }}"></div>{% endfor %}</div>
+      </div>
+      {% endif %}
+    </div>
+  </div>
+
+  {% if M.pays_dividend %}
+  <div class="panel">
+    <h2 style="margin-top:0">Dividends</h2>
+    <div class="kpi-grid" style="box-shadow:none;margin:6px 0">
+      <div class="kpi"><div class="l">Dividend / share</div><div class="v">{{ M.dividend_per_share|usd }}</div></div>
+      <div class="kpi"><div class="l">Payout ratio</div><div class="v">{{ M.payout_ratio|pct }}</div></div>
+      <div class="kpi"><div class="l">Dividends paid (FY)</div><div class="v">{{ M.dividends_paid|money }}</div></div>
+      <div class="kpi"><div class="l">5y dividend growth</div><div class="v">{{ M.dividend_cagr_5y|pct }}</div></div>
+    </div>
+    <p class="skip-note muted" style="font-size:.8rem">Dividend yield depends on the live share price — see the price chart above. Payout ratio is dividends paid divided by net income, from filings.</p>
+  </div>
+  {% endif %}
+
+  <!-- key ratios -->
+  <div class="panel">
+    <h2 style="margin-top:0">Key ratios (FY{{ L.fy }})</h2>
+    <div class="kpi-grid" style="box-shadow:none;margin:6px 0">
+      <div class="kpi"><div class="l">Gross margin</div><div class="v">{{ M.gross_margin|pct }}</div></div>
+      <div class="kpi"><div class="l">Operating margin</div><div class="v">{{ M.operating_margin|pct }}</div></div>
+      <div class="kpi"><div class="l">FCF margin</div><div class="v">{{ M.fcf_margin|pct }}</div></div>
+      <div class="kpi"><div class="l">ROA</div><div class="v">{{ M.roa|pct }}</div></div>
+      <div class="kpi"><div class="l">Debt / equity</div><div class="v">{{ M.debt_to_equity|ratio }}</div></div>
+      <div class="kpi"><div class="l">Current ratio</div><div class="v">{{ M.current_ratio|ratio }}</div></div>
+      <div class="kpi"><div class="l">Book value / share</div><div class="v">{{ M.book_value_per_share|usd }}</div></div>
+      <div class="kpi"><div class="l">FCF / share</div><div class="v">{{ M.fcf_per_share|usd }}</div></div>
+    </div>
+  </div>
+
+  <div class="disclaimer-strip">
+    Data through {{ rec.data_through }}, extracted from {{ rec.ticker }}'s XBRL filings on SEC EDGAR (CIK {{ rec.cik }}). Fiscal years are labeled by period-end year. Figures may contain extraction errors — <a href="https://www.sec.gov/cgi-bin/browse-edgar?action=getcompany&CIK={{ rec.cik }}&type=10-K" rel="nofollow noopener" target="_blank">verify against the original filing</a>. Not investment advice. See <a href="/disclaimer/">disclaimer</a>.
+  </div>
+</div>
+{% endblock %}
+{% block scripts %}
+<script>
+function srInitChart(){
+  if (typeof TradingView === 'undefined' || !TradingView.widget) { srChartFallback(); return; }
+  try {
+    new TradingView.widget({
+      container_id:"tv_chart", symbol:"{{ tvsym }}", autosize:false, width:"100%", height:420,
+      interval:"M", timezone:"Etc/UTC", theme:"light", style:"2", locale:"en",
+      hide_side_toolbar:true, allow_symbol_change:true, save_image:false
+    });
+  } catch(e){ srChartFallback(); }
+}
+function srChartFallback(){
+  var el=document.getElementById('tv_chart');
+  if(el) el.innerHTML='<div style="padding:30px;text-align:center;color:#6b7264;font-family:monospace;font-size:.85rem">Live chart unavailable here (the embed may be blocked). <a href="https://www.tradingview.com/symbols/{{ tvsym|replace(":","-") }}/" target="_blank" rel="noopener">View {{ rec.ticker }} on TradingView →</a></div>';
+}
+</script>
+<script src="https://s3.tradingview.com/tv.js" onload="srInitChart()" onerror="srChartFallback()"></script>
+{% endblock %}

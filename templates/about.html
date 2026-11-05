@@ -1,0 +1,13 @@
+{% extends "base.html" %}
+{% block title %}About StocksReviewer{% endblock %}
+{% block desc %}StocksReviewer presents US company fundamentals sourced directly from SEC EDGAR filings — free, primary-source, and transparently computed.{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap narrow">
+<span class="kick">About</span>
+<h1 style="margin:8px 0 14px">Fundamentals, from the source</h1>
+<p>StocksReviewer is a free reference for the financial fundamentals of US public companies. Every figure — revenue, earnings, cash flow, balance-sheet items, margins, returns, and a transparent valuation model — is derived from the structured XBRL data companies file with the U.S. Securities and Exchange Commission.</p>
+<p>That source matters. Most finance sites license their numbers from data vendors whose terms prohibit public redistribution, which is why their data sits behind paywalls. SEC filings are public domain, so StocksReviewer can show the same underlying numbers to everyone, for free, with a direct link back to the original filing on every page.</p>
+<h2>What this site is not</h2>
+<p>It is not a brokerage, not a newsletter, and not a source of investment advice. It doesn't tell you what to buy. It shows you what companies reported, computes standard metrics in the open, and links you to the primary document so you can check the work. Read the <a href="/methodology/">methodology</a> and <a href="/data-sources/">data sources</a> for exactly how the numbers are produced.</p>
+</div></section>
+{% endblock %}

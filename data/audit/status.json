@@ -1,0 +1,27 @@
+{
+  "date": "2026-10-31",
+  "ok": true,
+  "blocked": false,
+  "reasons": [],
+  "warnings": [
+    "4 companies with out-of-band net margin (shown, not blocked)",
+    "7 companies HELD from publish \u2014 failed statement reconciliation (see unverified.json; weekly task verifies)"
+  ],
+  "corrections": [],
+  "metrics": {
+    "companies": 5635,
+    "priced": 5352,
+    "price_coverage": 0.9498,
+    "newest_price_as_of": "2026-10-30",
+    "churn": {
+      "added": 0,
+      "dropped": 0,
+      "added_sample": [],
+      "dropped_sample": []
+    },
+    "bad_revenue": 0,
+    "future_fy": 0,
+    "held_unverified": 7,
+    "soft_flagged": 818
+  }
+}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+{% block title %}{{ sector }} Stocks — Industries & Companies | StocksReviewer{% endblock %}
+{% block desc %}{{ sector }} sector: {{ total_rows }} US public companies across {{ industries|length }} industries, ranked by revenue, with margins and growth from SEC filings.{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap">
+<nav class="crumbs"><a href="/sectors/">Sectors</a> <span>/</span> {{ sector }}</nav>
+<h1 style="margin:6px 0 4px">{{ sector }}</h1>
+<p class="muted">{{ total_rows }} companies · {{ industries|length }} industries · {{ sec_total|money }} combined revenue</p>
+
+<h2 style="margin-top:22px">Industries</h2>
+<div class="card-grid">
+{% for ind in industries %}
+  <a class="lcard sm" href="/sectors/{{ sector_slug }}/{{ ind.slug }}/" style="display:flex;justify-content:space-between;align-items:center">
+    <span>{{ ind.industry }}</span><span class="muted">{{ ind.count }}</span></a>
+{% endfor %}
+</div>
+
+<h2 style="margin-top:30px">All {{ sector }} companies</h2>
+<div class="tbl-wrap">
+<table>
+<thead><tr><th class="l">Company</th><th class="l">Industry</th><th>Revenue</th><th>Net margin</th><th>ROE</th><th>5y CAGR</th><th>Trend</th></tr></thead>
+<tbody>
+{% for ind in industries %}{% for r in ind.rows %}
+<tr onclick="location.href='/stocks/{{ r.ticker|replace('/','-') }}/'" style="cursor:pointer">
+  <td class="l"><span class="t-ticker">{{ r.ticker }}</span> <span class="t-name">{{ r.name }}</span></td>
+  <td class="l muted" style="font-size:.8rem">{{ r.industry }}</td>
+  <td class="num">{{ r.revenue|money }}</td>
+  <td class="num">{{ r.net_margin|pct }}</td>
+  <td class="num">{{ r.roe|pct }}</td>
+  <td class="num {{ 'pos' if r.rev_cagr_5y and r.rev_cagr_5y>0 else 'neg' if r.rev_cagr_5y and r.rev_cagr_5y<0 }}">{{ r.rev_cagr_5y|pct }}</td>
+  <td class="l">{{ r.rev_spark|spark|safe }}</td>
+</tr>
+{% endfor %}{% endfor %}
+</tbody>
+</table>
+</div>
+</div></section>
+{% endblock %}

@@ -1,0 +1,8 @@
+# Heavy artifacts — never commit these
+data/bulk/
+data/cache/
+data/prices/
+dist/
+__pycache__/
+*.pyc
+.DS_Store

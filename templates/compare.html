@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Compare Stocks Side by Side — Fundamentals | StocksReviewer{% endblock %}
+{% block desc %}Compare US public companies side by side on revenue, earnings, margins, returns, growth, and valuation — straight from SEC filings.{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap">
+<span class="kick">Compare</span>
+<h1 style="margin:8px 0 4px">Compare companies side by side</h1>
+<p class="muted">Add up to four tickers. Every figure is from SEC filings.</p>
+
+<div class="cmp-add">
+  <div class="searchbox" style="max-width:340px">
+    <input type="text" id="cmp-q" placeholder="Add a ticker — AAPL, MSFT…" autocomplete="off">
+    <div class="results" id="cmp-results"></div>
+  </div>
+  <div id="cmp-chips" class="cmp-chips"></div>
+</div>
+
+<div id="cmp-out" class="tbl-wrap" style="margin-top:18px;display:none">
+  <table id="cmp-table"><tbody></tbody></table>
+</div>
+<p id="cmp-empty" class="muted" style="margin-top:18px">No companies selected yet. Try adding <a href="#" data-add="AAPL">AAPL</a>, <a href="#" data-add="MSFT">MSFT</a>, and <a href="#" data-add="GOOGL">GOOGL</a>.</p>
+</div></section>
+{% endblock %}
+{% block scripts %}<script src="/static/js/compare.js" defer></script>{% endblock %}
