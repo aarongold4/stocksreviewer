@@ -301,7 +301,8 @@ def main():
             urls.append(f"/sectors/{sec_slug}/{ind_slug}/")
         ind_cards.sort(key=lambda c: c["total"], reverse=True)
         render("sector.html", f"sectors/{sec_slug}",
-               sector=sec, industries=ind_cards, total_rows=len(all_rows), sec_total=tot)
+               sector=sec, sector_slug=sec_slug, industries=ind_cards,
+               total_rows=len(all_rows), sec_total=tot)
         urls.append(f"/sectors/{sec_slug}/")
         sector_cards.append({"sector": sec, "slug": sec_slug,
                              "count": len(all_rows), "industries": len(inds), "total": tot})
