@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Methodology — How StocksReviewer Computes Its Numbers</title>
+<meta name="description" content="How StocksReviewer extracts and normalizes SEC XBRL data, assigns fiscal years, computes ratios and growth, and runs its discounted-cash-flow model.">
+<link rel="canonical" href="https://stocksreviewer.com/methodology/">
+<meta property="og:title" content="Methodology — How StocksReviewer Computes Its Numbers">
+<meta property="og:description" content="How StocksReviewer extracts and normalizes SEC XBRL data, assigns fiscal years, computes ratios and growth, and runs its discounted-cash-flow model.">
+<meta property="og:url" content="https://stocksreviewer.com/methodology/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">Stocks<b>Reviewer</b></a>
+    <div class="searchbox" id="searchbox">
+      <input type="text" id="q" placeholder="Search ticker or company…" autocomplete="off">
+      <div class="results" id="results"></div>
+    </div>
+    <nav class="tnav">
+      <a href="/screener/">Screener</a>
+      <a href="/compare/">Compare</a>
+      <a href="/lists/">Lists</a>
+      <a href="/sectors/">Sectors</a>
+      <a href="/methodology/">Methodology</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section"><div class="wrap narrow">
+<span class="kick">Methodology</span>
+<h1 style="margin:8px 0 14px">How the numbers are made</h1>
+<h2>Extraction</h2>
+<p>For each company we read the SEC's XBRL <code>companyfacts</code> data and pull annual figures from 10-K (and 20-F/40-F) filings. Because the same concept appears under different XBRL tags across companies and years — revenue alone spans several tags — each metric is resolved through a priority-ordered list of candidate tags, with older tags backfilling years the newer tag doesn't cover.</p>
+<h2>Fiscal years</h2>
+<p>Each annual figure is labeled by the calendar year of its reporting period's end date, not by the filing's stated fiscal-year field (which is unreliable for comparative-year figures pulled from later filings). This matches company convention for both September year-ends (e.g. a period ending Sept 2021 is FY2021) and January year-ends (a period ending Jan 2026 is FY2026). Restated values are superseded by the most recently filed version.</p>
+<h2>Derived metrics</h2>
+<p>Margins, returns (ROE, ROA), leverage (debt/equity, current ratio), per-share values (book value, FCF, revenue per share), and growth rates (3- and 5-year revenue CAGR) are computed from the extracted line items. Free cash flow is operating cash flow minus capital expenditure. All of these are price-independent — they come entirely from filings.</p>
+<h2>Valuation model</h2>
+<p>The DCF estimate is a transparent two-stage model: the latest fiscal year's free cash flow is grown for five years at a rate clamped from the company's own revenue CAGR (capped between 0% and 15%), then at a 2.5% terminal rate, discounted at 10%, and divided by shares outstanding. It runs only when free cash flow and share count are positive. It is a deliberately simple sanity check, not a price target — every assumption is shown on the page so you can disagree with it.</p>
+<h2>Sector &amp; industry classification</h2>
+<p>Companies are grouped using the GICS framework — the same 11 sectors Fidelity and most of the market use. Since EDGAR only provides each filer's SIC code (a government scheme), we map SIC codes to GICS sectors and industries with a curated crosswalk, plus company-level overrides for prominent names where SIC and GICS genuinely disagree (for example, Walmart is Consumer Staples under GICS but a "variety store" under SIC). Classification is therefore a close approximation, not an official GICS feed; a handful of smaller names may sit in an adjacent industry.</p>
+<h2>How current the data is</h2>
+<p>The site updates on an automated schedule rather than continuously. <strong>Fundamentals</strong> change only when a company files, so they refresh weekly — a job pulls SEC's bulk XBRL archives (which update within about a minute of each filing) and regenerates every page; a new 10-K or 10-Q is reflected at the next weekly run. <strong>Price-performance figures</strong> (the return columns on each company page) refresh nightly from the previous market close. The <strong>intraday chart</strong> is a live TradingView embed, so it is always current. Each company page stamps the date its fundamentals were extracted and the date its prices are as of, and links to the live EDGAR record, so you can always check freshness against the source.</p>
+<h2>Prices</h2>
+<p>The intraday price chart is embedded from TradingView, which carries its own market-data licensing. The price-performance table shows total returns over standard windows (5-day through 10-year and year-to-date), computed nightly from split- and dividend-adjusted daily closes; only the resulting percentages and an "as of" date are stored — StocksReviewer does not store or redistribute raw price series. Price-based ratios like P/E are intentionally left to the live chart rather than baked into the static page.</p>
+<h2>Limits</h2>
+<p>XBRL tagging is imperfect; some companies (especially financials and foreign filers) tag items unusually, so a metric may be missing or occasionally wrong. Every page links to the original EDGAR filing so you can verify. If you find an error, it's in the extraction layer, not the SEC's data.</p>
+</div></section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">Stocks<b>Reviewer</b></div>
+        <p style="margin-top:10px;max-width:30em">Company fundamentals, straight from SEC filings. Fundamental data sourced from public SEC EDGAR filings and presented for informational purposes only — not investment advice.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/screener/">Stock screener</a>
+        <a href="/methodology/">How we compute metrics</a>
+        <a href="/data-sources/">Data sources</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/about/">About</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-legal" style="margin-bottom:8px">
+      <strong>Data freshness:</strong> fundamentals refresh weekly and whenever a company files a new report with the SEC; price-performance figures refresh nightly from the previous market close. Site last updated 2026-11-07. Each company page also stamps the exact date its figures were extracted.
+    </div>
+    <div class="foot-legal">
+      © 2026 StocksReviewer. Financial data derived from SEC EDGAR (public domain). Charts by TradingView. Nothing on this site is investment advice or a recommendation to buy or sell any security. Figures are extracted from XBRL filings and may contain errors or omissions — always verify against the original filing before relying on any number.
+    </div>
+  </div>
+</footer>
+<script>window.SEARCH_URL="/search-index.json";</script>
+<script src="/static/js/search.js" defer></script>
+</body>
+</html>

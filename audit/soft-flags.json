@@ -1,0 +1,4927 @@
+[
+  {
+    "ticker": "JD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "JDCMF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CNC",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BABA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BABAF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BBAAY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MPC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TYGO",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "GLXY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CMI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NUE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "APO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "APOS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MDLN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DIDIY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEE-PN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEE-PW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEE-PT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEE-PU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEE-PV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEE-PS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ATH-PA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ATHS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ATH-PB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ATH-PD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ATH-PE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FCX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ADM",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BLK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MO",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "THC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MELI",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "CVNA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SE",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "KKR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KKR-PD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KKRT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KKRS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LNG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BIDU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BAIDF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BG",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "D",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SPGI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VIPS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FANG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DVA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HSIC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TAP",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "TAP-A",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "RNR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RNR-PG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RNR-PF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NIO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NIOIF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CYH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "APD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "YUMC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "B",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BHC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "QSR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "JKS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DOLE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PLD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PLDGP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BEN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GLP",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "EQT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BSTT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MAS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TROW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WYNN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RUSHA",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "RUSHB",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "LKNCY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SPG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SPG-PJ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ARDT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DLR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DLR-PK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DLR-PL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DLR-PJ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EHC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "COTY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EDU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NWOEF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ARES",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ARES-PB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CSIQ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TTEK",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "LINE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FMS",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FMCQF",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MLCO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TKO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RBA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HEI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HEI-A",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FWONA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FWONK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FWONB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LILA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LILAK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LILAB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LILAP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DFH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NIQ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FOUR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FOUR-PA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CLMT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BAM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EVR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CART",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CMPR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WTM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "URI",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BXP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GTES",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ACHC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NBR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ASTH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GTN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GTN-A",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CNDT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ARE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RYAN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RUN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OWL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MTN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NMRK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BHE",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "VMRK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VYX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NCRRP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OII",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "RHP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LGN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CELH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RNG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BRSL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SUNB",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BGC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IBKR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "QUAD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FLNC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SYM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CRK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PRVA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MGRE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MGRD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MGR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MGRB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "UCTT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RDNT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EQPT",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BE",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "STEP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CRTO",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "ACDC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VISN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CODI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CODI-PB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CODI-PC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CODI-PA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "U",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PIPR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VNO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VNORP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VNO-PL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VNO-PM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VNO-PN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VNO-PO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "YI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KNTK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STUB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GATX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PENG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IMMR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PJT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FCFS",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "PCTY",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BROS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SLQT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SSRM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SSRGF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BNED",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "ANDE",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "ROOT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BWIN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CTOS",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "NEGG",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "UTZ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BZUN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FPS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WTTR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AVO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WBTN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FUTU",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "LCID",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VNOM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IDT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ARRY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PGY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PGYWW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LUCK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "APAM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WEST",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMH-PG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMH-PH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BOX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BXCAP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RSI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TREE",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "MAX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AHT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AHT-PD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AHT-PF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AHT-PG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AHT-PH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AHT-PI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ADTN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WHD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KODK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DEI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SLG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SLG-PI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "INNV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SDHC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BMBL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EVTC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "USNA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ATHM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ACMR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TISI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CMRE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CMRE-PC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CMRE-PD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CMRE-PB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NUTX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PLAB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ANDG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HPP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HPP-PC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STKS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NPT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RILY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RILYG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RILYL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RILYP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RILYT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RILYZ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "USPH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LIND",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ESRT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CAAS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HLNE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PWP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FORTY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "INN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "INN-PE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "INN-PF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LSAK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BHR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BHR-PB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BHR-PD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OAK-PA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OAK-PB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HGTY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BELFA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BELFB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ATNI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DQ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CRLBF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GPRO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TTI",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "SEI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LNN",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "GOLD",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "VIRT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "APLD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BOOM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DOC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HNGE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STRT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CNTY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BVS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RLX",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "ORGO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SMC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GCMG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CNS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EHTH",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ICTSF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WBI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GKOS",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "FIP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZARE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "JBGS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MSTR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STRC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STRF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STRK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STRD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "UXIN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "APWC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RHLD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PRSU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SOGP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SDA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SDAWW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BRLT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NNBR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PRCH",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CMRF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BUR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AKR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IMAX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VICR",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "CGNT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BRCC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GLNG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LIFE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SVA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EVGO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SNDA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FLYX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FLYX-WT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GSHD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SCOR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BBCP",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "PMT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PMT-PA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PMT-PB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PMTU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PMTW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PMTV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PMT-PC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "INR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DSP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FLOC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RDW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MKTW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OPAL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DCGO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "XPOF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CRMD",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BBXIB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BBXIA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "INGN",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "CLDT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CLDT-PA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KPLT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BFS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BFS-PD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BFS-PE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ACTG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AHRT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AHRT-PA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SMA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "COHN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CSR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MLKWF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MLKMF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SST",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SSTPW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LTC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NMPGY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NMPRY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ALTI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CMTL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMWL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TWFG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SDOT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SBAC",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "PROP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HUT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "INDI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "UPLD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HTCO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IIIV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LUNR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BDL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NRGV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BRCB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMTX",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BTMD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RYTM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MRVI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "JANL",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "RMR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GLAS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NRDY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MAPS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GROV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GROVW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SBC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SBCWW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WULF",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "MAZE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VOYG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CMCM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GOOD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GOODN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GOODO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZVIA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MRMD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FCEL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FCELB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STRW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LMNR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CLPR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CRON",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OSG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AIV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HKD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KWY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EXR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LFCR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SAMG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BLND",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BAER",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BAERW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AZI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LTRX",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "GYRE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EOSE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EOSEW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BTBT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CEPL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OWLT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VIVK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMTD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GAIA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CFTR-PA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PEW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PEW-WT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PSTL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GLOO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DBRHP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DBRJP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DBRIP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SKYX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TZOO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GTEC",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PONY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PYAIF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AXTI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HERE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "JYD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TOUR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NXXT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SNAL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ACR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ACR-PC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ACR-PD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ANTA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LVO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CETX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CETXP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NTWK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "INTG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OCC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HKHC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMPX",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "AMPX-WT",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "LPTH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZEO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZEOWW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BHM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SRTM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LRHC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FVR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STCB",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CCM",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FBIO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FBIOP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BQ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WIMI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NAMI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DFLI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DFLIW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DYNR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CREX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "POM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DLPN",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "LNZA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LNZAW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RDZN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RDZNW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "JG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RHEP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RHEPB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RHEPZ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RHEPA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FPI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LNSR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SONM",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "ARL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MGTE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MGTEW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LBRA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EPOW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VELO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SNWV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FRPH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PVLA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DTSS",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "OST",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KOPN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DDC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FSI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CURR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STSR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FEDU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LIFD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CNTM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BEEP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OBIO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PRXA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GRUSF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STXS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DTGI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SMR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BRLS",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BRLSW",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "SGST",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LTSV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SCLX",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "SCLXW",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "STRS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SLNH",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SLNHP",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FREVS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "XWEL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RITRF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZRCN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CISO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PLBL",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "ASPI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GMBL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GMBLP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GMBLZ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GUER",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "XTIA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "QDMI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MXCT",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "DSS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EVFM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "YMT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MKZR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WSKEF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FTCO",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "VENU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VNTG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "XXII",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "UPXI",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "CLIK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEXR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEXRW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZYBT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KULR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BTCY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NCTY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CWD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CYCU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CYCUW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FBYD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FBYDP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FBYDW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PAVS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EHGO",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WETH",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "SQFT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SQFTP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SQFTW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HCTI",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "SRRE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CLWT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BLMH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SEED",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PECO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AIXI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CDIX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TRNR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NXGL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NXGLW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZCMD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "UDR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MSGM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SCAG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SCAGW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NCRA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ONFO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ONFOW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ONFOP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MDRR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DREM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "JZ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OBAI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WOK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GIPR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ENDI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OMH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LGHL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OMCC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ISCO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HTCR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EEIQ",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PWCM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AATC",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "PCT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PCTBP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PCTTW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PCTTU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ROIV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AIFA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BLGO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AITX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SCTH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ADAG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IHT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ESGH",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TOGI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TOGIW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TVRD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DCX",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IVF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FGCO",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "IPDN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KYNB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WAFU",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "XTKGF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VUZI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VGTK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "UCAR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GPOX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ACCL",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "ENSC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FFR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "XELB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FRQN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CRTD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NVVE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AIRE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ILAG",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "AEI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZPTA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZPTAW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KDK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KDKRW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RNGE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SELXF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VDTA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PFAI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RETO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AXNX",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "MKDW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MKDWW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STEK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FUNI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OXBR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OXBRW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LGL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ELVG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SNFI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ELTX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BNBX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BNKK",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "INV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "INVLW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SNTL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GRAN",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "SIDU",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "WHLR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WHLRD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WHLRP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WHLRL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NMHI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VNRX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SGLY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PDC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RANI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "JF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "QCLS",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "VAI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LFWD",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "NWBO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ZSQR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PWDY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RTON",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BINI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AIIO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AIIOW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LIMX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PROK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RFL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HGYN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LICN",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BICX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CHEV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DOGP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OFAL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LEXX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OPTT",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "PXLW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LXEO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GLTK",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HSDT",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "TAAG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FFAI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MWAI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ITOC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TIPT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MGRX",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "NIKI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "WAST",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FRSX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OMEX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SRCO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SEII",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OZSC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "THMG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TAOX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ABVC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ECOC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TPST",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AVAI",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "BCRD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NPHC",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "FCUV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IMSR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IMSRW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "COCH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "COCHW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "MATH",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ANIX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NXTS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SHMP",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SHFH",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "ABPO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ABPWW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KLRS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "QWTR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RAKR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ATLX",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "MBOT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TRSO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PFSA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NVACW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GTCH",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BASA",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "XERI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "KSEZ",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "PAVM",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NTRR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "FABC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HIHO",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CLDI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CLDWW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "RDSC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STEX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SGRX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HIGR",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "GRDX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "SATT",
+    "flags": [
+      "gross_profit=rev-cogs",
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GGBY",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "IBO",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CETI",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "PRFX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LTESF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMOD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AMODW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "OWPC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ADTX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HCMC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "DROR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "EHVVF",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "STRG",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GWLL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NEXT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TBN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "LOGC",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NTPIF",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "NPWR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HDRN",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BYSI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "BNET",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "AZTR",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "PMCB",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "GRI",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ASFT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "CSUI",
+    "flags": [
+      "gross_profit=rev-cogs"
+    ]
+  },
+  {
+    "ticker": "ITOX",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ALCE",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ACLEW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "ADIS",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "TBNRL",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "HDRNW",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
+    "ticker": "NPWR-WT",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  }
+]

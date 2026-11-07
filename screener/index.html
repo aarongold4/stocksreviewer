@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Stock Screener — Filter US Companies by Fundamentals | StocksReviewer</title>
+<meta name="description" content="Screen US public companies by revenue, margins, ROE, growth, and leverage — all computed from SEC EDGAR filings. Free and sortable.">
+<link rel="canonical" href="https://stocksreviewer.com/screener/">
+<meta property="og:title" content="Stock Screener — Filter US Companies by Fundamentals | StocksReviewer">
+<meta property="og:description" content="Screen US public companies by revenue, margins, ROE, growth, and leverage — all computed from SEC EDGAR filings. Free and sortable.">
+<meta property="og:url" content="https://stocksreviewer.com/screener/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">Stocks<b>Reviewer</b></a>
+    <div class="searchbox" id="searchbox">
+      <input type="text" id="q" placeholder="Search ticker or company…" autocomplete="off">
+      <div class="results" id="results"></div>
+    </div>
+    <nav class="tnav">
+      <a href="/screener/">Screener</a>
+      <a href="/compare/">Compare</a>
+      <a href="/lists/">Lists</a>
+      <a href="/sectors/">Sectors</a>
+      <a href="/methodology/">Methodology</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section">
+  <div class="wrap">
+    <span class="kick">Fundamental screener</span>
+    <h1 style="margin:8px 0 4px">Screen by the filed numbers</h1>
+    <p class="muted">Every column is computed from SEC filings. Click a header to sort; use the filters to narrow. Click any row to open the company.</p>
+
+    <div class="filters">
+      <div><label>Basis</label>
+        <select id="f-basis"><option value="annual">Annual (last FY)</option><option value="ttm">TTM (last 4 qtrs)</option></select></div>
+      <div><label>Sector</label>
+        <select id="f-sector"><option value="">All sectors</option><option>Communication Services</option><option>Consumer Discretionary</option><option>Consumer Staples</option><option>Energy</option><option>Financials</option><option>Health Care</option><option>Industrials</option><option>Information Technology</option><option>Materials</option><option>Real Estate</option><option>Unclassified</option><option>Utilities</option></select></div>
+      <div><label>Min revenue</label>
+        <select id="f-rev"><option value="0">Any</option><option value="1e8">$100M+</option><option value="1e9">$1B+</option><option value="1e10">$10B+</option><option value="1e11">$100B+</option></select></div>
+      <div><label>Min net margin</label>
+        <select id="f-margin"><option value="-99">Any</option><option value="0">Profitable</option><option value="0.1">10%+</option><option value="0.2">20%+</option></select></div>
+      <div><label>Min 5y rev CAGR</label>
+        <select id="f-cagr"><option value="-99">Any</option><option value="0">Growing</option><option value="0.1">10%+</option><option value="0.2">20%+</option></select></div>
+      <div><label>Dividend</label>
+        <select id="f-div"><option value="">Any</option><option value="1">Pays dividend</option></select></div>
+      <div class="count" id="count"></div>
+    </div>
+
+    <div class="tbl-wrap">
+      <table id="scr">
+        <thead><tr>
+          <th class="l sortable" data-k="ticker">Ticker</th>
+          <th class="l sortable" data-k="name">Company</th>
+          <th class="sortable act" data-k="revenue" data-num="1" id="h-rev">Revenue <span class="arw">▼</span></th>
+          <th class="sortable" data-k="net_income" data-num="1" id="h-ni">Net income</th>
+          <th class="sortable" data-k="net_margin" data-num="1" id="h-nm">Net margin</th>
+          <th class="sortable" data-k="roe" data-num="1">ROE</th>
+          <th class="sortable" data-k="rev_cagr_5y" data-num="1">5y CAGR</th>
+          <th class="sortable" data-k="dividend_per_share" data-num="1">Div/sh</th>
+          <th class="sortable" data-k="debt_to_equity" data-num="1">D/E</th>
+        </tr></thead>
+        <tbody id="scr-body"></tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">Stocks<b>Reviewer</b></div>
+        <p style="margin-top:10px;max-width:30em">Company fundamentals, straight from SEC filings. Fundamental data sourced from public SEC EDGAR filings and presented for informational purposes only — not investment advice.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/screener/">Stock screener</a>
+        <a href="/methodology/">How we compute metrics</a>
+        <a href="/data-sources/">Data sources</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/about/">About</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-legal" style="margin-bottom:8px">
+      <strong>Data freshness:</strong> fundamentals refresh weekly and whenever a company files a new report with the SEC; price-performance figures refresh nightly from the previous market close. Site last updated 2026-11-07. Each company page also stamps the exact date its figures were extracted.
+    </div>
+    <div class="foot-legal">
+      © 2026 StocksReviewer. Financial data derived from SEC EDGAR (public domain). Charts by TradingView. Nothing on this site is investment advice or a recommendation to buy or sell any security. Figures are extracted from XBRL filings and may contain errors or omissions — always verify against the original filing before relying on any number.
+    </div>
+  </div>
+</footer>
+<script>window.SEARCH_URL="/search-index.json";</script>
+<script src="/static/js/search.js" defer></script>
+<script src="/static/js/screener.js" defer></script></body>
+</html>

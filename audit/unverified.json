@@ -1,0 +1,58 @@
+[
+  {
+    "ticker": "MAGN",
+    "name": "Magnera",
+    "revenue": 3204000000,
+    "failed": [
+      "FY24 quarters sum to annual"
+    ]
+  },
+  {
+    "ticker": "RJET",
+    "name": "Republic Airways",
+    "revenue": 1346400000,
+    "failed": [
+      "FY24 quarters sum to annual"
+    ]
+  },
+  {
+    "ticker": "AHRT",
+    "name": "Ah Realty Trust",
+    "revenue": 285201000,
+    "failed": [
+      "FY24 quarters sum to annual"
+    ]
+  },
+  {
+    "ticker": "AHRT-PA",
+    "name": "Ah Realty Trust",
+    "revenue": 285201000,
+    "failed": [
+      "FY24 quarters sum to annual"
+    ]
+  },
+  {
+    "ticker": "RCAT",
+    "name": "Red Cat",
+    "revenue": 40729000,
+    "failed": [
+      "FY24 quarters sum to annual"
+    ]
+  },
+  {
+    "ticker": "MEGR",
+    "name": "First America Resources",
+    "revenue": 18790946,
+    "failed": [
+      "FY24 quarters sum to annual"
+    ]
+  },
+  {
+    "ticker": "FSTJ",
+    "name": "First America Resources",
+    "revenue": 18790946,
+    "failed": [
+      "FY24 quarters sum to annual"
+    ]
+  }
+]

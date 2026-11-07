@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Compare Stocks Side by Side — Fundamentals | StocksReviewer</title>
+<meta name="description" content="Compare US public companies side by side on revenue, earnings, margins, returns, growth, and valuation — straight from SEC filings.">
+<link rel="canonical" href="https://stocksreviewer.com/compare/">
+<meta property="og:title" content="Compare Stocks Side by Side — Fundamentals | StocksReviewer">
+<meta property="og:description" content="Compare US public companies side by side on revenue, earnings, margins, returns, growth, and valuation — straight from SEC filings.">
+<meta property="og:url" content="https://stocksreviewer.com/compare/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">Stocks<b>Reviewer</b></a>
+    <div class="searchbox" id="searchbox">
+      <input type="text" id="q" placeholder="Search ticker or company…" autocomplete="off">
+      <div class="results" id="results"></div>
+    </div>
+    <nav class="tnav">
+      <a href="/screener/">Screener</a>
+      <a href="/compare/">Compare</a>
+      <a href="/lists/">Lists</a>
+      <a href="/sectors/">Sectors</a>
+      <a href="/methodology/">Methodology</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section"><div class="wrap">
+<span class="kick">Compare</span>
+<h1 style="margin:8px 0 4px">Compare companies side by side</h1>
+<p class="muted">Add up to four tickers. Every figure is from SEC filings.</p>
+
+<div class="cmp-add">
+  <div class="searchbox" style="max-width:340px">
+    <input type="text" id="cmp-q" placeholder="Add a ticker — AAPL, MSFT…" autocomplete="off">
+    <div class="results" id="cmp-results"></div>
+  </div>
+  <div id="cmp-chips" class="cmp-chips"></div>
+</div>
+
+<div id="cmp-out" class="tbl-wrap" style="margin-top:18px;display:none">
+  <table id="cmp-table"><tbody></tbody></table>
+</div>
+<p id="cmp-empty" class="muted" style="margin-top:18px">No companies selected yet. Try adding <a href="#" data-add="AAPL">AAPL</a>, <a href="#" data-add="MSFT">MSFT</a>, and <a href="#" data-add="GOOGL">GOOGL</a>.</p>
+</div></section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">Stocks<b>Reviewer</b></div>
+        <p style="margin-top:10px;max-width:30em">Company fundamentals, straight from SEC filings. Fundamental data sourced from public SEC EDGAR filings and presented for informational purposes only — not investment advice.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/screener/">Stock screener</a>
+        <a href="/methodology/">How we compute metrics</a>
+        <a href="/data-sources/">Data sources</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/about/">About</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-legal" style="margin-bottom:8px">
+      <strong>Data freshness:</strong> fundamentals refresh weekly and whenever a company files a new report with the SEC; price-performance figures refresh nightly from the previous market close. Site last updated 2026-11-07. Each company page also stamps the exact date its figures were extracted.
+    </div>
+    <div class="foot-legal">
+      © 2026 StocksReviewer. Financial data derived from SEC EDGAR (public domain). Charts by TradingView. Nothing on this site is investment advice or a recommendation to buy or sell any security. Figures are extracted from XBRL filings and may contain errors or omissions — always verify against the original filing before relying on any number.
+    </div>
+  </div>
+</footer>
+<script>window.SEARCH_URL="/search-index.json";</script>
+<script src="/static/js/search.js" defer></script>
+<script src="/static/js/compare.js" defer></script></body>
+</html>

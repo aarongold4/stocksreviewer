@@ -1,0 +1,13 @@
+# StocksReviewer — daily audit, 2026-11-07
+
+**Verdict: ✅ SAFE TO DEPLOY**
+
+- Companies: **5636**
+- Priced: **5356** (95.0%)
+- Newest price as-of: **2026-11-06**
+- Held from publish (failed verification): **7** · soft-flagged (published): 818
+- Universe churn vs last deploy: +0 / −0
+
+## ⚠️ Warnings (logged, not blocking)
+- 4 companies with out-of-band net margin (shown, not blocked)
+- 7 companies HELD from publish — failed statement reconciliation (see unverified.json; weekly task verifies)
