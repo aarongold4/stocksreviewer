@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-06",
+  "date": "2026-11-07",
   "ok": true,
   "blocked": false,
   "reasons": [],
@@ -10,8 +10,8 @@
   "corrections": [],
   "metrics": {
     "companies": 5636,
-    "priced": 5353,
-    "price_coverage": 0.9498,
+    "priced": 5356,
+    "price_coverage": 0.9503,
     "newest_price_as_of": "2026-11-06",
     "churn": {
       "added": 0,
