@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-08",
+  "date": "2026-11-09",
   "ok": true,
   "blocked": false,
   "reasons": [],
@@ -12,13 +12,11 @@
     "companies": 5637,
     "priced": 5357,
     "price_coverage": 0.9503,
-    "newest_price_as_of": "2026-11-06",
+    "newest_price_as_of": "2026-11-09",
     "churn": {
-      "added": 1,
+      "added": 0,
       "dropped": 0,
-      "added_sample": [
-        "BTTC"
-      ],
+      "added_sample": [],
       "dropped_sample": []
     },
     "bad_revenue": 0,
