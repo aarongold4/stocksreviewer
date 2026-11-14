@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>About StocksReviewer</title>
+<meta name="description" content="StocksReviewer presents US company fundamentals sourced directly from SEC EDGAR filings — free, primary-source, and transparently computed.">
+<link rel="canonical" href="https://stocksreviewer.com/about/">
+<meta property="og:title" content="About StocksReviewer">
+<meta property="og:description" content="StocksReviewer presents US company fundamentals sourced directly from SEC EDGAR filings — free, primary-source, and transparently computed.">
+<meta property="og:url" content="https://stocksreviewer.com/about/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">Stocks<b>Reviewer</b></a>
+    <div class="searchbox" id="searchbox">
+      <input type="text" id="q" placeholder="Search ticker or company…" autocomplete="off">
+      <div class="results" id="results"></div>
+    </div>
+    <nav class="tnav">
+      <a href="/screener/">Screener</a>
+      <a href="/compare/">Compare</a>
+      <a href="/lists/">Lists</a>
+      <a href="/sectors/">Sectors</a>
+      <a href="/methodology/">Methodology</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section"><div class="wrap narrow">
+<span class="kick">About</span>
+<h1 style="margin:8px 0 14px">Fundamentals, from the source</h1>
+<p>StocksReviewer is a free reference for the financial fundamentals of US public companies. Every figure — revenue, earnings, cash flow, balance-sheet items, margins, returns, and a transparent valuation model — is derived from the structured XBRL data companies file with the U.S. Securities and Exchange Commission.</p>
+<p>That source matters. Most finance sites license their numbers from data vendors whose terms prohibit public redistribution, which is why their data sits behind paywalls. SEC filings are public domain, so StocksReviewer can show the same underlying numbers to everyone, for free, with a direct link back to the original filing on every page.</p>
+<h2>What this site is not</h2>
+<p>It is not a brokerage, not a newsletter, and not a source of investment advice. It doesn't tell you what to buy. It shows you what companies reported, computes standard metrics in the open, and links you to the primary document so you can check the work. Read the <a href="/methodology/">methodology</a> and <a href="/data-sources/">data sources</a> for exactly how the numbers are produced.</p>
+</div></section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">Stocks<b>Reviewer</b></div>
+        <p style="margin-top:10px;max-width:30em">Company fundamentals, straight from SEC filings. Fundamental data sourced from public SEC EDGAR filings and presented for informational purposes only — not investment advice.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/screener/">Stock screener</a>
+        <a href="/methodology/">How we compute metrics</a>
+        <a href="/data-sources/">Data sources</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/about/">About</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-legal" style="margin-bottom:8px">
+      <strong>Data freshness:</strong> fundamentals refresh weekly and whenever a company files a new report with the SEC; price-performance figures refresh nightly from the previous market close. Site last updated 2026-11-14. Each company page also stamps the exact date its figures were extracted.
+    </div>
+    <div class="foot-legal">
+      © 2026 StocksReviewer. Financial data derived from SEC EDGAR (public domain). Charts by TradingView. Nothing on this site is investment advice or a recommendation to buy or sell any security. Figures are extracted from XBRL filings and may contain errors or omissions — always verify against the original filing before relying on any number.
+    </div>
+  </div>
+</footer>
+<script>window.SEARCH_URL="/search-index.json";</script>
+<script src="/static/js/search.js" defer></script>
+</body>
+</html>

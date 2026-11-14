@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>StocksReviewer — Company Fundamentals from SEC Filings</title>
+<meta name="description" content="Free, clean fundamental data for US public companies — revenue, earnings, cash flow, margins, and valuation — sourced directly from SEC EDGAR filings.">
+<link rel="canonical" href="https://stocksreviewer.com/">
+<meta property="og:title" content="StocksReviewer — Company Fundamentals from SEC Filings">
+<meta property="og:description" content="Free, clean fundamental data for US public companies — revenue, earnings, cash flow, margins, and valuation — sourced directly from SEC EDGAR filings.">
+<meta property="og:url" content="https://stocksreviewer.com/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">Stocks<b>Reviewer</b></a>
+    <div class="searchbox" id="searchbox">
+      <input type="text" id="q" placeholder="Search ticker or company…" autocomplete="off">
+      <div class="results" id="results"></div>
+    </div>
+    <nav class="tnav">
+      <a href="/screener/">Screener</a>
+      <a href="/compare/">Compare</a>
+      <a href="/lists/">Lists</a>
+      <a href="/sectors/">Sectors</a>
+      <a href="/methodology/">Methodology</a>
+    </nav>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <span class="kick">Sourced from SEC EDGAR · 5630 companies</span>
+    <h1>Every US public company's <em>real numbers</em>, straight from their SEC filings.</h1>
+    <p>Revenue, earnings, cash flow, margins, returns, and a transparent valuation model for US public companies. Pulled straight from XBRL filings, recomputed in the open, free to read.</p>
+    <div class="searchbox">
+      <input type="text" id="q2" placeholder="Search a ticker or company — AAPL, Walmart, Tesla…" autocomplete="off">
+      <div class="results" id="results2"></div>
+    </div>
+    <div class="hero-stats">
+      <div><div class="n">5630</div><div class="l">Companies (this build)</div></div>
+      <div><div class="n">12yr</div><div class="l">Annual history</div></div>
+      <div><div class="n">Free</div><div class="l">No paywall, ever</div></div>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="wrap">
+    <div class="panel-head"><h2 style="margin:0">Largest companies by revenue</h2><a href="/screener/" class="kick">Open screener →</a></div>
+    <div class="tbl-wrap" style="margin-top:14px">
+      <table>
+        <thead><tr>
+          <th class="l">Company</th><th>Revenue (FY)</th><th>Net income</th>
+          <th>Net margin</th><th>ROE</th><th>5y rev CAGR</th><th>Diluted EPS</th>
+        </tr></thead>
+        <tbody>
+          <tr onclick="location.href='/stocks/AMZN/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">AMZN</span> <span class="t-name">Amazon</span></td>
+            <td class="num">$716.9B</td>
+            <td class="num ">$77.7B</td>
+            <td class="num">10.8%</td>
+            <td class="num">18.9%</td>
+            <td class="num pos">13.2%</td>
+            <td class="num">$7.17</td>
+          </tr>
+          <tr onclick="location.href='/stocks/WMT/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">WMT</span> <span class="t-name">Walmart</span></td>
+            <td class="num">$706.4B</td>
+            <td class="num ">$21.9B</td>
+            <td class="num">3.1%</td>
+            <td class="num">22.0%</td>
+            <td class="num pos">4.9%</td>
+            <td class="num">$2.73</td>
+          </tr>
+          <tr onclick="location.href='/stocks/UNH/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">UNH</span> <span class="t-name">UnitedHealth Group</span></td>
+            <td class="num">$447.6B</td>
+            <td class="num ">$12.1B</td>
+            <td class="num">2.7%</td>
+            <td class="num">12.0%</td>
+            <td class="num pos">11.7%</td>
+            <td class="num">$13.23</td>
+          </tr>
+          <tr onclick="location.href='/stocks/AAPL/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">AAPL</span> <span class="t-name">Apple</span></td>
+            <td class="num">$416.2B</td>
+            <td class="num ">$112.0B</td>
+            <td class="num">26.9%</td>
+            <td class="num">151.9%</td>
+            <td class="num pos">8.7%</td>
+            <td class="num">$7.46</td>
+          </tr>
+          <tr onclick="location.href='/stocks/MCK/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">MCK</span> <span class="t-name">McKESSON</span></td>
+            <td class="num">$403.4B</td>
+            <td class="num ">$4.8B</td>
+            <td class="num">1.2%</td>
+            <td class="num">-219.2%</td>
+            <td class="num pos">11.1%</td>
+            <td class="num">$38.38</td>
+          </tr>
+          <tr onclick="location.href='/stocks/GOOGL/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">GOOGL</span> <span class="t-name">Alphabet (Google)</span></td>
+            <td class="num">$402.8B</td>
+            <td class="num ">$132.2B</td>
+            <td class="num">32.8%</td>
+            <td class="num">31.8%</td>
+            <td class="num pos">17.2%</td>
+            <td class="num">$10.81</td>
+          </tr>
+          <tr onclick="location.href='/stocks/GOOG/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">GOOG</span> <span class="t-name">Alphabet (Google)</span></td>
+            <td class="num">$402.8B</td>
+            <td class="num ">$132.2B</td>
+            <td class="num">32.8%</td>
+            <td class="num">31.8%</td>
+            <td class="num pos">17.2%</td>
+            <td class="num">$10.81</td>
+          </tr>
+          <tr onclick="location.href='/stocks/GOOGN/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">GOOGN</span> <span class="t-name">Alphabet</span></td>
+            <td class="num">$402.8B</td>
+            <td class="num ">$132.2B</td>
+            <td class="num">32.8%</td>
+            <td class="num">31.8%</td>
+            <td class="num pos">17.2%</td>
+            <td class="num">$10.81</td>
+          </tr>
+          <tr onclick="location.href='/stocks/GOOGM/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">GOOGM</span> <span class="t-name">Alphabet</span></td>
+            <td class="num">$402.8B</td>
+            <td class="num ">$132.2B</td>
+            <td class="num">32.8%</td>
+            <td class="num">31.8%</td>
+            <td class="num pos">17.2%</td>
+            <td class="num">$10.81</td>
+          </tr>
+          <tr onclick="location.href='/stocks/CVS/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">CVS</span> <span class="t-name">CVS Health</span></td>
+            <td class="num">$402.1B</td>
+            <td class="num ">$1.8B</td>
+            <td class="num">0.4%</td>
+            <td class="num">2.4%</td>
+            <td class="num pos">8.4%</td>
+            <td class="num">$1.39</td>
+          </tr>
+          <tr onclick="location.href='/stocks/XOM/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">XOM</span> <span class="t-name">ExxonMobil</span></td>
+            <td class="num">$332.2B</td>
+            <td class="num ">$28.8B</td>
+            <td class="num">8.7%</td>
+            <td class="num">11.1%</td>
+            <td class="num pos">13.2%</td>
+            <td class="num">$6.70</td>
+          </tr>
+          <tr onclick="location.href='/stocks/MSFT/'" style="cursor:pointer">
+            <td class="l"><span class="t-ticker">MSFT</span> <span class="t-name">Microsoft</span></td>
+            <td class="num">$331.8B</td>
+            <td class="num ">$133.7B</td>
+            <td class="num">40.3%</td>
+            <td class="num">30.2%</td>
+            <td class="num pos">14.6%</td>
+            <td class="num">$17.95</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<section class="section section-alt">
+  <div class="wrap narrow">
+    <span class="kick">Why this exists</span>
+    <h2 style="margin-top:8px">Primary-source fundamentals, not repackaged vendor data</h2>
+    <p>Most finance sites license their numbers from data vendors whose terms forbid redistribution — so you pay, or you get a thin free tier. StocksReviewer reads the same underlying source those vendors do: the structured XBRL data every US public company files with the SEC. That data is public domain, which is why this site can show it all, for free.</p>
+    <p>Every figure traces to a 10-K or 10-Q. The ratios, growth rates, and valuation model are computed in the open and <a href="/methodology/">documented here</a>. Price charts come from TradingView; everything else is filings.</p>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">Stocks<b>Reviewer</b></div>
+        <p style="margin-top:10px;max-width:30em">Company fundamentals, straight from SEC filings. Fundamental data sourced from public SEC EDGAR filings and presented for informational purposes only — not investment advice.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/screener/">Stock screener</a>
+        <a href="/methodology/">How we compute metrics</a>
+        <a href="/data-sources/">Data sources</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/about/">About</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-legal" style="margin-bottom:8px">
+      <strong>Data freshness:</strong> fundamentals refresh weekly and whenever a company files a new report with the SEC; price-performance figures refresh nightly from the previous market close. Site last updated 2026-11-14. Each company page also stamps the exact date its figures were extracted.
+    </div>
+    <div class="foot-legal">
+      © 2026 StocksReviewer. Financial data derived from SEC EDGAR (public domain). Charts by TradingView. Nothing on this site is investment advice or a recommendation to buy or sell any security. Figures are extracted from XBRL filings and may contain errors or omissions — always verify against the original filing before relying on any number.
+    </div>
+  </div>
+</footer>
+<script>window.SEARCH_URL="/search-index.json";</script>
+<script src="/static/js/search.js" defer></script>
+<script>window.HERO_SEARCH=true;</script></body>
+</html>

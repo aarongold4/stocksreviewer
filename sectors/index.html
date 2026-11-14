@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Browse Stocks by Sector & Industry (GICS) | StocksReviewer</title>
+<meta name="description" content="Browse US public companies by GICS sector and industry — the same classification Fidelity uses — with company counts and aggregate revenue from SEC filings.">
+<link rel="canonical" href="https://stocksreviewer.com/sectors/">
+<meta property="og:title" content="Browse Stocks by Sector & Industry (GICS) | StocksReviewer">
+<meta property="og:description" content="Browse US public companies by GICS sector and industry — the same classification Fidelity uses — with company counts and aggregate revenue from SEC filings.">
+<meta property="og:url" content="https://stocksreviewer.com/sectors/">
+<meta property="og:type" content="website">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="/static/css/style.css">
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap">
+    <a href="/" class="brand">Stocks<b>Reviewer</b></a>
+    <div class="searchbox" id="searchbox">
+      <input type="text" id="q" placeholder="Search ticker or company…" autocomplete="off">
+      <div class="results" id="results"></div>
+    </div>
+    <nav class="tnav">
+      <a href="/screener/">Screener</a>
+      <a href="/compare/">Compare</a>
+      <a href="/lists/">Lists</a>
+      <a href="/sectors/">Sectors</a>
+      <a href="/methodology/">Methodology</a>
+    </nav>
+  </div>
+</header>
+
+<section class="section"><div class="wrap">
+<span class="kick">Sectors &amp; industries</span>
+<h1 style="margin:8px 0 4px">Browse by sector</h1>
+<p class="muted">Eleven GICS sectors — the standard Fidelity and the rest of the market use — each broken into industries. Click a sector to drill into its industries.</p>
+<div class="card-grid">
+  <a class="lcard" href="/sectors/financials/"><h3>Financials</h3>
+  <div class="muted mono" style="font-size:.78rem">818 companies · 7 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$9.9T revenue</div></a>
+  <a class="lcard" href="/sectors/industrials/"><h3>Industrials</h3>
+  <div class="muted mono" style="font-size:.78rem">963 companies · 13 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$5.6T revenue</div></a>
+  <a class="lcard" href="/sectors/consumer-discretionary/"><h3>Consumer Discretionary</h3>
+  <div class="muted mono" style="font-size:.78rem">568 companies · 15 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$5.1T revenue</div></a>
+  <a class="lcard" href="/sectors/information-technology/"><h3>Information Technology</h3>
+  <div class="muted mono" style="font-size:.78rem">937 companies · 7 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$4.3T revenue</div></a>
+  <a class="lcard" href="/sectors/communication-services/"><h3>Communication Services</h3>
+  <div class="muted mono" style="font-size:.78rem">161 companies · 8 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$2.8T revenue</div></a>
+  <a class="lcard" href="/sectors/consumer-staples/"><h3>Consumer Staples</h3>
+  <div class="muted mono" style="font-size:.78rem">169 companies · 8 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$2.4T revenue</div></a>
+  <a class="lcard" href="/sectors/utilities/"><h3>Utilities</h3>
+  <div class="muted mono" style="font-size:.78rem">174 companies · 4 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$1.8T revenue</div></a>
+  <a class="lcard" href="/sectors/energy/"><h3>Energy</h3>
+  <div class="muted mono" style="font-size:.78rem">153 companies · 5 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$1.7T revenue</div></a>
+  <a class="lcard" href="/sectors/health-care/"><h3>Health Care</h3>
+  <div class="muted mono" style="font-size:.78rem">1018 companies · 6 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$1.6T revenue</div></a>
+  <a class="lcard" href="/sectors/materials/"><h3>Materials</h3>
+  <div class="muted mono" style="font-size:.78rem">299 companies · 5 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$1.1T revenue</div></a>
+  <a class="lcard" href="/sectors/real-estate/"><h3>Real Estate</h3>
+  <div class="muted mono" style="font-size:.78rem">366 companies · 2 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$532.8B revenue</div></a>
+  <a class="lcard" href="/sectors/unclassified/"><h3>Unclassified</h3>
+  <div class="muted mono" style="font-size:.78rem">4 companies · 1 industries</div>
+  <div class="mono" style="font-size:.78rem;color:var(--accent);margin-top:4px">$45.6M revenue</div></a>
+</div>
+</div></section>
+
+<footer class="foot">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="brand">Stocks<b>Reviewer</b></div>
+        <p style="margin-top:10px;max-width:30em">Company fundamentals, straight from SEC filings. Fundamental data sourced from public SEC EDGAR filings and presented for informational purposes only — not investment advice.</p>
+      </div>
+      <div>
+        <h4>Explore</h4>
+        <a href="/screener/">Stock screener</a>
+        <a href="/methodology/">How we compute metrics</a>
+        <a href="/data-sources/">Data sources</a>
+      </div>
+      <div>
+        <h4>Site</h4>
+        <a href="/about/">About</a>
+        <a href="/disclaimer/">Disclaimer</a>
+      </div>
+    </div>
+    <div class="foot-legal" style="margin-bottom:8px">
+      <strong>Data freshness:</strong> fundamentals refresh weekly and whenever a company files a new report with the SEC; price-performance figures refresh nightly from the previous market close. Site last updated 2026-11-14. Each company page also stamps the exact date its figures were extracted.
+    </div>
+    <div class="foot-legal">
+      © 2026 StocksReviewer. Financial data derived from SEC EDGAR (public domain). Charts by TradingView. Nothing on this site is investment advice or a recommendation to buy or sell any security. Figures are extracted from XBRL filings and may contain errors or omissions — always verify against the original filing before relying on any number.
+    </div>
+  </div>
+</footer>
+<script>window.SEARCH_URL="/search-index.json";</script>
+<script src="/static/js/search.js" defer></script>
+</body>
+</html>
