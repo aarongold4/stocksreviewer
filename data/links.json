@@ -1,0 +1,8 @@
+{
+  "_comment": "Single source of truth for ALL outbound Apply / Open-account / Visit links. To swap in affiliate/tracking links after you're approved, edit the 'url' value for each broker here and rebuild — nothing else changes. Links render with rel='sponsored nofollow'. Values below are the current official broker URLs.",
+  "brokers": [
+    {"id": "interactive-brokers", "name": "Interactive Brokers", "url": "https://www.interactivebrokers.com/", "blurb": "Low-cost access to global markets"},
+    {"id": "robinhood", "name": "Robinhood", "url": "https://robinhood.com/", "blurb": "Commission-free trading, simple app"},
+    {"id": "webull", "name": "Webull", "url": "https://www.webull.com/", "blurb": "Free trades, advanced charting"}
+  ]
+}

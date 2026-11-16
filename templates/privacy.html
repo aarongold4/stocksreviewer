@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block title %}Privacy Policy | StocksReviewer{% endblock %}
+{% block desc %}How StocksReviewer handles data, cookies, analytics, and advertising, and how you can opt out of personalized ads.{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap narrow">
+<span class="kick">Privacy</span>
+<h1 style="margin:8px 0 14px">Privacy Policy</h1>
+<p class="muted">Last updated {{ today }}.</p>
+
+<p>StocksReviewer ("we", "us") is a free, informational reference for US company fundamentals. This policy explains what happens to data when you visit stocksreviewer.com.</p>
+
+<h2>What we collect</h2>
+<p>We do not ask you to create an account and we do not collect names, email addresses, or payment information through this site. Like most websites, our host and our analytics and advertising partners automatically receive standard technical information when you visit — such as your IP address, browser type, device, referring page, and the pages you view.</p>
+
+<h2>Analytics</h2>
+<p>We use <strong>Google Analytics</strong> to understand how visitors use the site in aggregate (which pages are popular, roughly where visitors come from). Google Analytics sets cookies and processes usage data on our behalf. You can learn more at <a href="https://policies.google.com/privacy" rel="nofollow noopener" target="_blank">Google's privacy policy</a>, and you can prevent Google Analytics from using your data with the <a href="https://tools.google.com/dlpage/gaoptout" rel="nofollow noopener" target="_blank">Google Analytics Opt-out Browser Add-on</a>.</p>
+
+<h2>Advertising &amp; cookies</h2>
+<p>Third-party vendors, <strong>including Google</strong>, use cookies to serve ads based on a user's prior visits to this website and other sites. Google's use of advertising cookies enables it and its partners to serve ads to you based on your visit to this site and/or other sites on the Internet.</p>
+<p>You may opt out of personalized advertising by visiting <a href="https://adssettings.google.com" rel="nofollow noopener" target="_blank">Google Ads Settings</a> (https://adssettings.google.com). Alternatively, you can opt out of a third-party vendor's use of cookies for personalized advertising by visiting <a href="https://www.aboutads.info" rel="nofollow noopener" target="_blank">www.aboutads.info</a>.</p>
+
+<h2>Cookies in general</h2>
+<p>Cookies are small files stored by your browser. The cookies on this site come from our analytics and advertising partners, as described above. You can block or delete cookies in your browser settings; some site features may work differently if you do.</p>
+
+<h2>Data sources</h2>
+<p>The financial figures on this site are derived from public-domain filings with the U.S. Securities and Exchange Commission (SEC EDGAR). That is public company data, not your personal data.</p>
+
+<h2>Children</h2>
+<p>This site is not directed to children under 13 and we do not knowingly collect information from them.</p>
+
+<h2>Changes &amp; contact</h2>
+<p>We may update this policy from time to time; the "last updated" date above reflects the latest version. Questions about privacy can be sent to <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>. See also our <a href="/disclosure/">advertiser disclosure</a> and <a href="/terms/">terms of use</a>.</p>
+</div></section>
+{% endblock %}

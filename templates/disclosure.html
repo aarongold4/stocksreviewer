@@ -1,0 +1,26 @@
+{% extends "base.html" %}
+{% block title %}Advertiser Disclosure | StocksReviewer{% endblock %}
+{% block desc %}How StocksReviewer makes money — advertising and affiliate links — and why it never changes the data we show.{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap narrow">
+<span class="kick">Disclosure</span>
+<h1 style="margin:8px 0 14px">How this site earns money</h1>
+<p class="muted">Last updated {{ today }}.</p>
+
+<p>StocksReviewer is free to read. To cover its costs, the site earns money in two ways:</p>
+
+<h2>Advertising</h2>
+<p>We display ads served by third-party networks, including Google AdSense. We are paid based on ad impressions and clicks. We don't control which specific ads appear, and an ad is not an endorsement. See our <a href="/privacy/">privacy policy</a> for how advertising cookies work and how to opt out of personalized ads.</p>
+
+<h2>Affiliate &amp; broker links</h2>
+<p>Some outbound links — for example the "Open account" links in the "Trade this stock" box on company pages — are paid advertising or affiliate links. If you click one and open an account, StocksReviewer may receive a commission, <strong>at no additional cost to you</strong>. These links are marked to search engines as sponsored.</p>
+
+<h2>What this does <em>not</em> affect</h2>
+<p>Advertising and affiliate relationships never change the numbers on this site. Every financial figure is extracted from public SEC filings by an automated pipeline that has no knowledge of advertisers, and every company page links to the original filing so you can verify it yourself. We don't rank, hide, or alter companies based on who pays us, and the presence of a broker link on a page is not a recommendation to buy that stock or use that broker.</p>
+
+<h2>Not investment advice</h2>
+<p>Nothing on this site, sponsored or not, is investment advice or a recommendation to buy or sell any security. See our <a href="/disclaimer/">full disclaimer</a> and <a href="/terms/">terms of use</a>.</p>
+
+<p class="muted">Questions about this disclosure: <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.</p>
+</div></section>
+{% endblock %}

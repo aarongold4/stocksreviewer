@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+{% block title %}Contact | StocksReviewer{% endblock %}
+{% block desc %}How to reach StocksReviewer — corrections, questions, and feedback.{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap narrow">
+<span class="kick">Contact</span>
+<h1 style="margin:8px 0 14px">Contact us</h1>
+<p>Questions, corrections, or feedback? Email us at <a href="mailto:{{ site.contact_email }}"><strong>{{ site.contact_email }}</strong></a>.</p>
+<p>Because every figure on this site comes from SEC filings, the most useful corrections point to the specific company and the filing that contradicts what we show — we'll check it against the source and fix the extraction.</p>
+<p class="muted">We read everything but can't offer personalized investment advice. For how the data is produced, see the <a href="/methodology/">methodology</a>; for how the site earns money, see our <a href="/disclosure/">disclosure</a>.</p>
+</div></section>
+{% endblock %}

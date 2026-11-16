@@ -21,6 +21,7 @@ on:
     # rebuild+deploy from committed data (no SEC/price refetch).
     paths:
       - 'data/verified_overrides.json'
+      - 'data/links.json'
       - 'templates/**'
       - 'static/**'
       - 'build.py'

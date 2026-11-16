@@ -20,7 +20,12 @@ ROOT = Path(__file__).parent
 DATA = ROOT / "data"
 DIST = ROOT / "dist"
 SITE = {"name": "StocksReviewer", "url": "https://stocksreviewer.com",
-        "tagline": "Company fundamentals, straight from SEC filings."}
+        "tagline": "Company fundamentals, straight from SEC filings.",
+        # GA4: replace the placeholder with your real Measurement ID (G-XXXXXXXXXX).
+        # Leave it blank ("") to omit Analytics entirely.
+        "ga_id": "",  # <-- paste the GA4 Measurement ID here (e.g. G-ABC123XYZ); empty = GA tag omitted
+        "adsense_pub": "ca-pub-4897434778726769",
+        "contact_email": "contact@stocksreviewer.com"}
 
 EXCH = {"Nasdaq": "NASDAQ", "NasdaqGS": "NASDAQ", "NYSE": "NYSE",
         "NYSE Arca": "AMEX", "NYSEArca": "AMEX", "CBOE": "CBOE",
@@ -209,9 +214,15 @@ def main():
                       trim_blocks=True, lstrip_blocks=True)
     env.filters.update(money=money, num=num, pct=pct, ratio=ratio, usd=usd, spark=sparkline, fmtval=fmtval)
 
+    # outbound broker/affiliate links — single config file, swappable post-approval
+    try:
+        brokers = json.loads((DATA / "links.json").read_text()).get("brokers", [])
+    except Exception:
+        brokers = []
+
     today = date.today().isoformat()
     ctx = dict(site=SITE, year=date.today().year, today=today,
-               total=len(index))
+               total=len(index), brokers=brokers)
 
     def render(tpl, path, **kw):
         html = env.get_template(tpl).render(canonical=("/" if path == "" else f"/{path}/"), **ctx, **kw)
@@ -234,8 +245,13 @@ def main():
     render("methodology.html", "methodology")
     render("sources.html", "data-sources")
     render("disclaimer.html", "disclaimer")
+    render("privacy.html", "privacy")
+    render("terms.html", "terms")
+    render("contact.html", "contact")
+    render("disclosure.html", "disclosure")
 
-    urls = ["/", "/screener/", "/compare/", "/about/", "/methodology/", "/data-sources/", "/disclaimer/"]
+    urls = ["/", "/screener/", "/compare/", "/about/", "/methodology/", "/data-sources/",
+            "/disclaimer/", "/privacy/", "/terms/", "/contact/", "/disclosure/"]
 
     # ---- programmatic "top" lists ----
     def has(k):
@@ -341,6 +357,9 @@ def main():
         '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n'
         f"{entries}\n</urlset>\n")
     (DIST / "robots.txt").write_text(f"User-agent: *\nAllow: /\n\nSitemap: {SITE['url']}/sitemap.xml\n")
+    # AdSense: authorized digital sellers file (must be reachable at site root)
+    (DIST / "ads.txt").write_text(
+        "google.com, pub-4897434778726769, DIRECT, f08c47fec0942fa0\n")
     print(f"Built {len(urls)} pages ({len(companies)} stocks).")
 
 

@@ -16,6 +16,18 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=IBM+Plex+Sans:wght@400;500;600;700&family=Newsreader:opsz,wght@6..72,500;6..72,600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/static/css/style.css">
 {% block schema %}{% endblock %}
+{% if site.adsense_pub %}
+<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ site.adsense_pub }}" crossorigin="anonymous"></script>
+{% endif %}
+{% if site.ga_id %}
+<script async src="https://www.googletagmanager.com/gtag/js?id={{ site.ga_id }}"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', '{{ site.ga_id }}');
+</script>
+{% endif %}
 </head>
 <body>
 <header class="topbar">
@@ -53,7 +65,11 @@
       <div>
         <h4>Site</h4>
         <a href="/about/">About</a>
+        <a href="/contact/">Contact</a>
         <a href="/disclaimer/">Disclaimer</a>
+        <a href="/disclosure/">Advertiser disclosure</a>
+        <a href="/privacy/">Privacy policy</a>
+        <a href="/terms/">Terms of use</a>
       </div>
     </div>
     <div class="foot-legal" style="margin-bottom:8px">

@@ -241,3 +241,14 @@ td.num { font-family: var(--mono); font-variant-numeric: tabular-nums; }
 .perf-l { color: var(--ink-soft); }
 .perf-v { font-family: var(--mono); font-variant-numeric: tabular-nums; font-weight: 600; }
 @media (max-width: 560px) { .perf-grid { grid-template-columns: 1fr; gap: 0; } }
+
+/* ---- broker "Trade this stock" box + advertiser disclosure ---- */
+.ad-disclosure{font-size:.76rem;line-height:1.5;margin:0 0 14px;padding:8px 12px;
+  background:var(--paper-2);border:1px solid var(--line-soft);border-radius:7px;}
+.broker-box .broker-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;}
+.broker-card{display:flex;flex-direction:column;gap:4px;padding:14px 16px;background:var(--card);
+  border:1px solid var(--line);border-radius:9px;box-shadow:var(--sh);transition:box-shadow .15s,border-color .15s;}
+.broker-card:hover{box-shadow:var(--sh-lift);border-color:var(--green-br);text-decoration:none;}
+.broker-name{font-weight:600;color:var(--ink);font-size:.98rem;}
+.broker-blurb{font-size:.8rem;}
+.broker-cta{margin-top:4px;font-family:var(--mono);font-size:.78rem;color:var(--accent);font-weight:600;}

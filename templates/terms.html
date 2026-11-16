@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+{% block title %}Terms of Use | StocksReviewer{% endblock %}
+{% block desc %}The terms governing your use of StocksReviewer — an informational site, not investment advice.{% endblock %}
+{% block body %}
+<section class="section"><div class="wrap narrow">
+<span class="kick">Terms</span>
+<h1 style="margin:8px 0 14px">Terms of Use</h1>
+<p class="muted">Last updated {{ today }}.</p>
+
+<p>By accessing stocksreviewer.com ("the site") you agree to these terms. If you do not agree, please do not use the site.</p>
+
+<h2>Informational use only</h2>
+<p>The site provides financial data and computed metrics for informational and educational purposes. <strong>Nothing on this site is investment, financial, legal, or tax advice, or a recommendation to buy, sell, or hold any security.</strong> You are solely responsible for your own investment decisions and should consult a licensed professional about your situation.</p>
+
+<h2>No warranty</h2>
+<p>Figures are extracted automatically from SEC XBRL filings and may contain errors, omissions, or misclassifications. The site is provided "as is", without warranties of any kind, express or implied, including accuracy, completeness, or fitness for a particular purpose. Always verify any figure against the original filing on SEC EDGAR before relying on it.</p>
+
+<h2>Limitation of liability</h2>
+<p>To the fullest extent permitted by law, StocksReviewer and its operator are not liable for any losses or damages arising from your use of, or reliance on, the site or its content.</p>
+
+<h2>External &amp; advertising links</h2>
+<p>The site links to third-party websites, including brokers and advertisers. Some outbound links are paid advertising or affiliate links (see our <a href="/disclosure/">disclosure</a>). We are not responsible for the content, products, or practices of third-party sites.</p>
+
+<h2>Intellectual property</h2>
+<p>The underlying financial data is public-domain SEC filing data. The site's design, text, and compiled presentation are the property of StocksReviewer. You may reference and link to the site; please do not scrape or republish it wholesale.</p>
+
+<h2>Changes</h2>
+<p>We may update these terms at any time; continued use after changes constitutes acceptance. Questions: <a href="mailto:{{ site.contact_email }}">{{ site.contact_email }}</a>.</p>
+</div></section>
+{% endblock %}

@@ -25,6 +25,9 @@
 </div>
 
 <div class="wrap">
+  {% if brokers %}
+  <p class="ad-disclosure muted">Advertiser disclosure: some links on this page are paid advertising links — if you open a broker account through one, StocksReviewer may earn a commission at no cost to you. It does not affect the data shown. <a href="/disclosure/">Learn more</a>.</p>
+  {% endif %}
   <div class="kpi-grid">
     <div class="kpi"><div class="l">Revenue FY{{ L.fy }}</div><div class="v">{{ L.revenue|money }}</div></div>
     <div class="kpi"><div class="l">Net income</div><div class="v {{ 'neg' if L.net_income and L.net_income<0 }}">{{ L.net_income|money }}</div></div>
@@ -65,6 +68,22 @@
       {% endfor %}
     </div>
     <p class="skip-note muted" style="font-size:.78rem;margin-top:10px">Split- and dividend-adjusted total return, computed from trailing-date closing prices as of the date shown. Other sources may differ slightly by date convention.</p>
+  </div>
+  {% endif %}
+
+  {% if brokers %}
+  <div class="panel broker-box">
+    <div class="panel-head"><h2 style="margin:0">Trade {{ rec.ticker }}</h2><span class="muted" style="font-size:.8rem">advertising · not a recommendation</span></div>
+    <div class="broker-grid">
+      {% for b in brokers %}
+      <a class="broker-card" href="{{ b.url }}" rel="sponsored nofollow" target="_blank">
+        <span class="broker-name">{{ b.name }}</span>
+        <span class="broker-blurb muted">{{ b.blurb }}</span>
+        <span class="broker-cta">Open account →</span>
+      </a>
+      {% endfor %}
+    </div>
+    <p class="muted" style="font-size:.78rem;margin-top:10px">Paid advertising links. StocksReviewer may earn a commission if you open an account, at no cost to you — see our <a href="/disclosure/">disclosure</a>. Nothing here is investment advice or a recommendation to use any broker.</p>
   </div>
   {% endif %}
 
