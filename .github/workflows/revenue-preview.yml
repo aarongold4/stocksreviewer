@@ -1,0 +1,47 @@
+name: Revenue rule preview (no deploy)
+
+# Runs only on the revenue-fix work branch. Rebuilds every company in memory
+# under the old and new revenue rules and commits a comparison report to this
+# branch. It never writes data/companies, never builds dist/, never deploys.
+on:
+  push:
+    branches: [claude/project-thread-znju12]
+    paths:
+      - 'pipeline/**'
+      - '.github/workflows/revenue-preview.yml'
+
+permissions:
+  contents: write
+
+concurrency:
+  group: revenue-preview
+  cancel-in-progress: true
+
+jobs:
+  preview:
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 1
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: pip install -r requirements.txt
+      - name: Download SEC bulk files
+        run: python -m pipeline.fetch_bulk_zip
+      - name: Compare old vs new revenue rule
+        run: python -m pipeline.revenue_preview
+      - name: Commit the report to this branch
+        run: |
+          git config user.name  "stocksreviewer-bot"
+          git config user.email "noreply@anthropic.com"
+          git add data/audit/revenue-preview.md data/audit/revenue-preview.json
+          git commit -m "Revenue rule preview report [skip ci]" || echo "no changes"
+          git push
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: revenue-preview
+          path: data/audit/revenue-preview.*

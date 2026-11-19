@@ -82,6 +82,43 @@ def _extract(facts, kind, unit, candidates):
     return merged
 
 
+# Revenue is special. Many filers (REITs, airlines, banks, insurers, utilities)
+# tag BOTH RevenueFromContractWithCustomerExcludingAssessedTax (the ASC 606
+# contract-revenue subset) and Revenues (total revenue, which also counts lease,
+# interest, insurance and other income). Taking the first tag in priority order
+# showed the subset as "revenue". Instead, for each fiscal year take the LARGEST
+# value among the total-revenue tags. The gross-of-excise tag
+# (…IncludingAssessedTax) is NOT in the max — it would inflate revenue for
+# excise-heavy filers — and only backfills years no other tag covers.
+REVENUE_MAX_TAGS = (
+    "RevenueFromContractWithCustomerExcludingAssessedTax",
+    "Revenues",
+    "SalesRevenueNet",
+    "SalesRevenueGoodsNet",
+)
+
+
+def _extract_revenue(facts, unit, candidates):
+    """({fy: value}, {fy: winning_tag}) — largest total-revenue tag per year."""
+    per_tag = {t: _annual_from_tag(facts, t, unit, FLOW) for t in candidates}
+    merged, tags = {}, {}
+    for tag in candidates:
+        if tag not in REVENUE_MAX_TAGS:
+            continue
+        for fy, v in per_tag[tag].items():
+            if v is None:
+                continue
+            if fy not in merged or v > merged[fy]:
+                merged[fy], tags[fy] = v, tag
+    for tag in candidates:          # fallback-only tags backfill missing years
+        if tag in REVENUE_MAX_TAGS:
+            continue
+        for fy, v in per_tag[tag].items():
+            if fy not in merged and v is not None:
+                merged[fy], tags[fy] = v, tag
+    return merged, tags
+
+
 def _shares_series(allfacts):
     """Shares outstanding by fiscal year, from dei/us-gaap instant tags."""
     for tax, tag in SHARES_TAGS:
@@ -170,7 +207,45 @@ def _quarterly_flow(facts, candidates, fye_month):
     return merged
 
 
-def _build_quarters(gaap, annual, fye_month):
+def _quarterly_revenue(facts, candidates, fye_month, annual_tags):
+    """Quarterly revenue that does not mix tags within a fiscal year.
+
+    Each tag gives its own discrete quarters (newest filing of that tag wins).
+    For each fiscal year, use the tag that supplied that year's annual figure
+    when it covers Q1-Q3 (so Q4 = annual - Q1..Q3 stays consistent). Otherwise
+    take, per quarter, the largest value among the total-revenue tags, falling
+    back to the excise-inclusive tag only where nothing else covers a quarter.
+    """
+    per_tag = {t: _quarterly_flow(facts, [t], fye_month) for t in candidates}
+    years = {y for qs in per_tag.values() for (y, _q) in qs}
+    out = {}
+    for y in years:
+        win = annual_tags.get(y)
+        if win and all((y, q) in per_tag.get(win, {}) for q in (1, 2, 3)):
+            for q in (1, 2, 3, 4):
+                if (y, q) in per_tag[win]:
+                    out[(y, q)] = per_tag[win][(y, q)]
+            continue
+        for q in (1, 2, 3, 4):
+            best = None
+            for t in candidates:
+                if t not in REVENUE_MAX_TAGS:
+                    continue
+                v = per_tag[t].get((y, q))
+                if v is not None and (best is None or v > best):
+                    best = v
+            if best is None:
+                for t in candidates:
+                    v = per_tag[t].get((y, q))
+                    if v is not None:
+                        best = v
+                        break
+            if best is not None:
+                out[(y, q)] = best
+    return out
+
+
+def _build_quarters(gaap, annual, fye_month, revenue_tags=None):
     """Return (quarter_labels, q_series, ttm) for income-statement metrics,
     deriving Q4 = annual − (Q1+Q2+Q3) where possible."""
     metrics = {
@@ -179,6 +254,8 @@ def _build_quarters(gaap, annual, fye_month):
         "eps_diluted": CONCEPTS["eps_diluted"][2],
     }
     q_raw = {m: _quarterly_flow(gaap, cands, fye_month) for m, cands in metrics.items()}
+    q_raw["revenue"] = _quarterly_revenue(gaap, metrics["revenue"], fye_month,
+                                          revenue_tags or {})
 
     for m, qs in q_raw.items():
         ann = annual.get(m, {})
@@ -229,8 +306,12 @@ def build_record(companyfacts, ticker, meta):
     gaap = allfacts.get("us-gaap", {})
 
     series = {}
+    revenue_tags = {}
     for name, (kind, unit, cands) in CONCEPTS.items():
-        s = _extract(gaap, kind, unit, cands)
+        if name == "revenue":
+            s, revenue_tags = _extract_revenue(gaap, unit, cands)
+        else:
+            s = _extract(gaap, kind, unit, cands)
         if s:
             series[name] = s
     shares = _shares_series(allfacts)
@@ -337,7 +418,7 @@ def build_record(companyfacts, ticker, meta):
             fye_month = 12
     except Exception:
         fye_month = 12
-    q_labels, q_series, ttm = _build_quarters(gaap, series, fye_month)
+    q_labels, q_series, ttm = _build_quarters(gaap, series, fye_month, revenue_tags)
     if ttm.get("revenue") and ttm.get("net_income") is not None:
         ttm["net_margin"] = _safe_div(ttm["net_income"], ttm["revenue"])
 
@@ -358,6 +439,7 @@ def build_record(companyfacts, ticker, meta):
         "quarter_labels": q_labels,
         "q_series": q_series,
         "ttm": ttm,
+        "revenue_tag": revenue_tags.get(fy) if fy is not None else None,
         "data_through": datetime.utcnow().strftime("%Y-%m-%d"),
     }
 
