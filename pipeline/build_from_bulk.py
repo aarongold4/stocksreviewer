@@ -72,6 +72,8 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument("--limit", type=int, default=0, help="0 = all")
     ap.add_argument("--resume", action="store_true", default=True)
+    ap.add_argument("--refresh", action="store_true",
+                    help="rebuild every company from the zip, not only new ones")
     args = ap.parse_args()
 
     if not FACTS_ZIP.exists():
@@ -91,32 +93,45 @@ def main():
     for i, (ticker, cik, title) in enumerate(universe, 1):
         safe = ticker.replace("/", "-")
         out = COMPANIES / f"{safe}.json"
-        if out.exists():
+        if out.exists() and not args.refresh:
             try:
                 index.append(fmt_row(json.loads(out.read_text())))
                 ok += 1
                 continue
             except Exception:
                 pass
+        def keep_existing():
+            if args.refresh and out.exists():
+                try:
+                    index.append(fmt_row(json.loads(out.read_text())))
+                    return True
+                except Exception:
+                    return False
+            return False
+
         cik10 = f"{cik:010d}"
         member = f"CIK{cik10}.json"
         if member not in facts_names:
-            skipped += 1
+            if not keep_existing():
+                skipped += 1
             continue
         try:
             cf = json.loads(facts_zip.read(member))
         except Exception:
-            skipped += 1
+            if not keep_existing():
+                skipped += 1
             continue
         meta = sub_meta_from_zip(subs_zip, cik10) if subs_zip else {}
         try:
             rec = build_record(cf, ticker, meta)
         except Exception:
-            skipped += 1
+            if not keep_existing():
+                skipped += 1
             continue
         rev_l = rec["latest"].get("revenue")
         if not rec["years"] or rev_l is None or rev_l < 0:
-            skipped += 1
+            if not keep_existing():
+                skipped += 1
             continue
         out.write_text(json.dumps(rec))
         index.append(fmt_row(rec))

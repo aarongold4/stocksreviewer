@@ -10,7 +10,7 @@ MODE="${MODE:-prices}"
 echo "::group::refresh ($MODE)"
 if [ "$MODE" = "full" ]; then
   python -m pipeline.fetch_bulk_zip
-  python -m pipeline.build_from_bulk
+  python -m pipeline.build_from_bulk --refresh   # rebuild all, not only new tickers
 fi
 # MODE=build -> rebuild+deploy from already-committed data (no fetch). Used when
 # the daily verification task pushes verified_overrides.json / new content.
