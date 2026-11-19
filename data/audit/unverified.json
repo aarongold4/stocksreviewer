@@ -1,5 +1,21 @@
 [
   {
+    "ticker": "FERG",
+    "name": "Ferguson Enterprises",
+    "revenue": 30762000000,
+    "failed": [
+      "FY25 quarters sum to annual"
+    ]
+  },
+  {
+    "ticker": "FUBO",
+    "name": "FuboTV",
+    "revenue": 6107378000,
+    "failed": [
+      "FY25 quarters sum to annual"
+    ]
+  },
+  {
     "ticker": "MAGN",
     "name": "Magnera",
     "revenue": 3204000000,
@@ -10,38 +26,14 @@
   {
     "ticker": "RJET",
     "name": "Republic Airways",
-    "revenue": 1346400000,
-    "failed": [
-      "FY24 quarters sum to annual"
-    ]
-  },
-  {
-    "ticker": "AHRT",
-    "name": "Ah Realty Trust",
-    "revenue": 285201000,
-    "failed": [
-      "FY24 quarters sum to annual"
-    ]
-  },
-  {
-    "ticker": "AHRT-PA",
-    "name": "Ah Realty Trust",
-    "revenue": 285201000,
-    "failed": [
-      "FY24 quarters sum to annual"
-    ]
-  },
-  {
-    "ticker": "RCAT",
-    "name": "Red Cat",
-    "revenue": 40729000,
+    "revenue": 1676500000,
     "failed": [
       "FY24 quarters sum to annual"
     ]
   },
   {
     "ticker": "MEGR",
-    "name": "First America Resources",
+    "name": "Metech Group",
     "revenue": 18790946,
     "failed": [
       "FY24 quarters sum to annual"
@@ -49,7 +41,7 @@
   },
   {
     "ticker": "FSTJ",
-    "name": "First America Resources",
+    "name": "Metech Group",
     "revenue": 18790946,
     "failed": [
       "FY24 quarters sum to annual"
