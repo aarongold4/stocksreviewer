@@ -42,6 +42,120 @@ def _fy_of(end):
         return None
 
 
+
+# ---------------------------------------------------------------------------
+# Fiscal-calendar changes (FY-end moves and reverse mergers).
+# When a filer's fiscal calendar changes, its companyfacts mix periods from two
+# calendars: e.g. Ferguson (July FY -> calendar), or a reverse merger where the
+# accounting acquirer's history replaces the old registrant's (Republic into
+# Mesa's CIK; Hulu + Live TV into fuboTV's). Keyed by period-end year alone,
+# those periods collide. build_record() detects the change and sets _CAL; it is
+# None for every other company, so their extraction is unchanged.
+_CAL = None
+
+
+def _month_near(m, target, tol=1):
+    d = abs(m - target) % 12
+    return min(d, 12 - d) <= tol
+
+
+def _annual_periods(facts, tags):
+    """{fy: (start, end)} of 12-month annual periods, newest filing per year."""
+    out, seen = {}, {}
+    for t in tags:
+        rows = (facts.get(t) or {}).get("units", {}).get("USD") or []
+        for r in rows:
+            if r.get("form") not in ANNUAL_FORMS:
+                continue
+            d = _days(r.get("start"), r.get("end"))
+            if d is None or not (350 <= d <= 380):
+                continue
+            fy = _fy_of(r.get("end", ""))
+            if fy is None:
+                continue
+            filed = r.get("filed", "")
+            if fy in seen and filed <= seen[fy]:
+                continue
+            seen[fy] = filed
+            out[fy] = (r["start"], r["end"])
+    return out
+
+
+def _calendar_context(gaap, rev_tags, meta_fye_month):
+    """Return a context dict if the fiscal calendar changed, else None."""
+    per = _annual_periods(gaap, rev_tags)
+    if not per:
+        return None
+    by_end = sorted(per.items(), key=lambda kv: kv[1][1], reverse=True)
+    last_fy, (last_start, last_end) = by_end[0]
+    last_m = int(last_end[5:7])
+    annual_change = any(not _month_near(int(e[5:7]), last_m) for _s, e in per.values())
+    meta_change = not _month_near(meta_fye_month, last_m)
+    if not (annual_change or meta_change):
+        return None
+    kept = {}
+    for fy, (st, en) in by_end:          # most recent unbroken run on the current calendar
+        if not _month_near(int(en[5:7]), last_m):
+            break
+        kept[fy] = (st, en)
+    return {
+        "annual_change": annual_change,
+        "last_m": last_m,
+        "kept": kept,
+        "first_kept_end": min(e for _s, e in kept.values()),
+        "last_fy": last_fy,
+        "last_end": last_end,
+        "ends": {},
+    }
+
+
+def _annual_row_ok(r):
+    """Under a calendar change, drop annual/instant rows from the old calendar."""
+    if not _CAL or not _CAL["annual_change"]:
+        return True
+    end = r.get("end", "")
+    try:
+        m = int(end[5:7])
+    except Exception:
+        return False
+    if not _month_near(m, _CAL["last_m"]):
+        return False
+    d = _days(end, _CAL["first_kept_end"])
+    return d is None or d <= 5
+
+
+def _quarter_key_cal(r, fye_month):
+    """(fy, q) for a discrete 10-Q quarter under a calendar change, or None to drop.
+
+    A quarter inside one of the current calendar's fiscal years takes that
+    year's label, and its position must match the filing's own fiscal period
+    (fp): a 10-Q never reports a fiscal Q4, and an old-calendar quarter lands
+    in the wrong position. A quarter after the last annual period belongs to
+    the new calendar (meta fiscal-year end) and must start a later fiscal year.
+    Anything else (old-calendar history, transition periods) is dropped.
+    """
+    start, end, fp = r.get("start", ""), r.get("end", ""), r.get("fp")
+    for fy, (a_start, a_end) in _CAL["kept"].items():
+        d_s = _days(a_start, start)
+        d_e = _days(end, a_end)
+        if d_s is None or d_e is None or d_s < -5 or d_e < -5:
+            continue
+        pos = min(4, max(1, round(_days(a_start, end) / 91.31)))
+        if pos == 4:
+            return None
+        if fp in ("Q1", "Q2", "Q3", "Q4") and fp != f"Q{pos}":
+            return None
+        return (fy, pos)
+    if end > _CAL["last_end"]:
+        k = _quarter_of(end, fye_month)
+        if not k or k[0] <= _CAL["last_fy"]:
+            return None
+        if fp in ("Q1", "Q2", "Q3", "Q4") and fp != f"Q{k[1]}":
+            return None
+        return k
+    return None
+
+
 def _annual_from_tag(facts, tag, unit, kind):
     """Return {fiscal_year: value} for one tag, annual figures only.
     Keyed by period-END year (the `fy`/`fp` fields are unreliable for
@@ -55,6 +169,8 @@ def _annual_from_tag(facts, tag, unit, kind):
     out, seen_filed = {}, {}
     for r in rows:
         if r.get("form") not in ANNUAL_FORMS:
+            continue
+        if not _annual_row_ok(r):
             continue
         if kind in (FLOW, PERSHARE):
             d = _days(r.get("start"), r.get("end"))
@@ -131,7 +247,7 @@ def _shares_series(allfacts):
             continue
         out, seen = {}, {}
         for r in rows:
-            if r.get("form") not in ANNUAL_FORMS:
+            if r.get("form") not in ANNUAL_FORMS or not _annual_row_ok(r):
                 continue
             fy = _fy_of(r.get("end", ""))
             if fy is None:
@@ -150,7 +266,7 @@ def _shares_series(allfacts):
         rows = node.get("units", {}).get("shares", [])
         out, seen = {}, {}
         for r in rows:
-            if r.get("form") not in ANNUAL_FORMS:
+            if r.get("form") not in ANNUAL_FORMS or not _annual_row_ok(r):
                 continue
             d = _days(r.get("start"), r.get("end"))
             if d is not None and not (350 <= d <= 380):
@@ -196,9 +312,14 @@ def _quarterly_flow(facts, candidates, fye_month):
             d = _days(r.get("start"), r.get("end"))
             if d is None or not (80 <= d <= 100):
                 continue
-            key = _quarter_of(r.get("end", ""), fye_month)
+            if _CAL:
+                key = _quarter_key_cal(r, fye_month)
+            else:
+                key = _quarter_of(r.get("end", ""), fye_month)
             if not key:
                 continue
+            if _CAL:
+                _CAL["ends"].setdefault(key, r.get("end", ""))
             filed = r.get("filed", "")
             if key in seen and filed <= seen[key]:
                 continue
@@ -257,6 +378,15 @@ def _build_quarters(gaap, annual, fye_month, revenue_tags=None):
     q_raw["revenue"] = _quarterly_revenue(gaap, metrics["revenue"], fye_month,
                                           revenue_tags or {})
 
+    if _CAL:
+        # A closed fiscal year shows quarters only if Q1-Q3 all came from the
+        # current calendar; a lone surviving quarter would be misleading.
+        for m, qs in q_raw.items():
+            for y in {y for (y, _q) in qs}:
+                if y <= _CAL["last_fy"] and not all((y, q) in qs for q in (1, 2, 3)):
+                    for q in (1, 2, 3, 4):
+                        qs.pop((y, q), None)
+
     for m, qs in q_raw.items():
         ann = annual.get(m, {})
         years = {y for (y, q) in qs}
@@ -274,6 +404,17 @@ def _build_quarters(gaap, annual, fye_month, revenue_tags=None):
 
     ttm = {}
     last4 = keys[-4:]
+    if _CAL and len(last4) == 4:
+        # TTM only when the last four quarters are consecutive (no transition gap)
+        ends = []
+        for (y, q) in last4:
+            e = _CAL["ends"].get((y, q))
+            if e is None and q == 4 and y in _CAL["kept"]:
+                e = _CAL["kept"][y][1]
+            ends.append(e)
+        gaps = [_days(a, b) if a and b else None for a, b in zip(ends, ends[1:])]
+        if any(g is None or not (75 <= g <= 105) for g in gaps):
+            last4 = []
     if len(last4) == 4:
         for m, qs in q_raw.items():
             vals = [qs.get(k) for k in last4]
@@ -302,8 +443,27 @@ def _cagr(series, years_back):
 
 
 def build_record(companyfacts, ticker, meta):
+    global _CAL
     allfacts = companyfacts.get("facts", {})
     gaap = allfacts.get("us-gaap", {})
+    _CAL = _calendar_context(gaap, CONCEPTS["revenue"][2], _fye_month(meta))
+    try:
+        rec = _build_record(companyfacts, ticker, meta, allfacts, gaap)
+    finally:
+        _CAL = None
+    return rec
+
+
+def _fye_month(meta):
+    fye = meta.get("fiscal_year_end", "") or ""
+    try:
+        m = int(fye[:2]) if len(fye) >= 2 else 12
+        return m if 1 <= m <= 12 else 12
+    except Exception:
+        return 12
+
+
+def _build_record(companyfacts, ticker, meta, allfacts, gaap):
 
     series = {}
     revenue_tags = {}
@@ -440,6 +600,7 @@ def build_record(companyfacts, ticker, meta):
         "q_series": q_series,
         "ttm": ttm,
         "revenue_tag": revenue_tags.get(fy) if fy is not None else None,
+        "calendar_change": bool(_CAL),
         "data_through": datetime.utcnow().strftime("%Y-%m-%d"),
     }
 
