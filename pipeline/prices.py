@@ -33,6 +33,31 @@ def _throttle():
     _last[0] = time.time()
 
 
+def _session_date(ts, meta):
+    """Trading date of a daily bar, in the exchange's own time zone."""
+    off = meta.get("gmtoffset", -18000)
+    return dt.datetime.fromtimestamp(ts + off, dt.timezone.utc).date()
+
+
+def _drop_unfinished_session(meta, ts, adj, now=None):
+    """Drop today's bar while the regular session is still open.
+
+    Yahoo's daily chart includes the in-progress session as its last bar, priced
+    at the live quote. GitHub often starts the scheduled job hours late, during
+    market hours, so without this the site published intraday returns labelled
+    as a close. Keep only bars whose regular session has ended.
+    """
+    try:
+        reg = meta["currentTradingPeriod"]["regular"]
+        start, end = int(reg["start"]), int(reg["end"])
+    except (KeyError, TypeError, ValueError):
+        return ts, adj
+    now = time.time() if now is None else now
+    if ts and now < end and ts[-1] >= start - 6 * 3600:
+        return ts[:-1], adj[:-1]
+    return ts, adj
+
+
 def _fetch_history(ticker):
     """[(date, adjclose)] sorted ascending, or None."""
     sym = ticker.upper()
@@ -47,7 +72,9 @@ def _fetch_history(ticker):
         adj = r["indicators"]["adjclose"][0]["adjclose"]
     except Exception:
         return None
-    hist = [(dt.date.fromtimestamp(t), a) for t, a in zip(ts, adj) if a is not None]
+    ts, adj = _drop_unfinished_session(r.get("meta") or {}, ts, adj)
+    hist = [(_session_date(t, r.get("meta") or {}), a)
+            for t, a in zip(ts, adj) if a is not None]
     hist.sort()
     return hist or None
 

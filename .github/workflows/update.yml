@@ -1,14 +1,17 @@
 name: StocksReviewer auto-update
 
 # Fully autonomous. Runs on GitHub's servers — nothing of yours needs to be on.
-#   - Nightly 09:10 UTC (05:10 ET): refresh prices, rebuild, self-audit, deploy
+#   - Weeknights 22:10 UTC (5:10 PM ET), after the 4 PM close: refresh prices,
+#     rebuild, self-audit, deploy. GitHub often starts scheduled jobs hours
+#     late; prices.py ignores any session still open, so a late start can only
+#     use completed closes, never a live intraday quote.
 #   - Weekly Sun 08:10 UTC: ALSO refresh SEC fundamentals (new 10-Q/10-K filings)
 # The self-audit (pipeline/audit.py) blocks deploy if data looks broken, and a
 # failed run emails you via GitHub. Manual run: Actions tab → Run workflow.
 
 on:
   schedule:
-    - cron: '10 9 * * 1-6'    # Mon–Sat 09:10 UTC: prices only
+    - cron: '10 22 * * 1-5'   # Mon–Fri 22:10 UTC (after close): prices only
     - cron: '10 8 * * 0'      # Sunday  08:10 UTC: full (fundamentals + prices)
   workflow_dispatch:
     inputs:
