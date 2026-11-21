@@ -23,7 +23,7 @@ SITE = {"name": "StocksReviewer", "url": "https://stocksreviewer.com",
         "tagline": "Company fundamentals, straight from SEC filings.",
         # GA4: replace the placeholder with your real Measurement ID (G-XXXXXXXXXX).
         # Leave it blank ("") to omit Analytics entirely.
-        "ga_id": "",  # <-- paste the GA4 Measurement ID here (e.g. G-ABC123XYZ); empty = GA tag omitted
+        "ga_id": "G-ABC123XYZ",  # <-- paste the GA4 Measurement ID here (e.g. G-ABC123XYZ); empty = GA tag omitted
         "adsense_pub": "ca-pub-4897434778726769",
         "contact_email": "contact@stocksreviewer.com"}
 
