@@ -1,0 +1,26 @@
+{
+  "date": "2026-11-21",
+  "ok": true,
+  "blocked": false,
+  "reasons": [],
+  "warnings": [
+    "6 companies with out-of-band net margin (shown, not blocked)"
+  ],
+  "corrections": [],
+  "metrics": {
+    "companies": 5639,
+    "priced": 5359,
+    "price_coverage": 0.9503,
+    "newest_price_as_of": "2026-11-20",
+    "churn": {
+      "added": 0,
+      "dropped": 0,
+      "added_sample": [],
+      "dropped_sample": []
+    },
+    "bad_revenue": 0,
+    "future_fy": 0,
+    "held_unverified": 0,
+    "soft_flagged": 784
+  }
+}
