@@ -13,6 +13,10 @@ on:
   schedule:
     - cron: '10 22 * * 1-5'   # Mon–Fri 22:10 UTC (after close): prices only
     - cron: '10 8 * * 0'      # Sunday  08:10 UTC: full (fundamentals + prices)
+    - cron: '47 11 * * 2-6'   # Tue–Sat 11:47 UTC: safety-net prices run. GitHub
+                              # sometimes drops a scheduled run outright (Fri
+                              # 2026-11-21 never fired); this catches the missed
+                              # close. Harmless when the first run worked.
   workflow_dispatch:
     inputs:
       mode:
@@ -74,8 +78,16 @@ jobs:
           git config user.name  "stocksreviewer-bot"
           git config user.email "noreply@anthropic.com"
           git add data/index.json data/prices.json data/audit/ data/companies/ || true
-          git commit -m "auto-update ($(date -u +%F), ${{ steps.mode.outputs.mode }})" || echo "no changes"
-          git push || true
+          git commit -m "auto-update ($(date -u +%F), ${{ steps.mode.outputs.mode }})" || { echo "no changes"; exit 0; }
+          # Never swallow a failed push (it used to be `git push || true`, so a
+          # push rejected because the verification task or a manual edit landed
+          # first was silently lost). Rebase onto whatever landed and retry;
+          # if it still fails, fail the job so GitHub emails.
+          for i in 1 2 3; do
+            git pull --rebase origin main && git push origin HEAD:main && exit 0
+            echo "push attempt $i failed; retrying"; sleep $((i*10))
+          done
+          echo "::error::could not push refreshed data to main"; exit 1
 
       - name: Deploy dist to Hostinger
         env:
