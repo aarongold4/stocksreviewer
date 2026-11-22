@@ -294,6 +294,12 @@
     ]
   },
   {
+    "ticker": "APD",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
     "ticker": "RNR",
     "flags": [
       "assets=liab+equity"
@@ -325,12 +331,6 @@
   },
   {
     "ticker": "CYH",
-    "flags": [
-      "assets=liab+equity"
-    ]
-  },
-  {
-    "ticker": "APD",
     "flags": [
       "assets=liab+equity"
     ]
@@ -2247,6 +2247,12 @@
     ]
   },
   {
+    "ticker": "IIIV",
+    "flags": [
+      "assets=liab+equity"
+    ]
+  },
+  {
     "ticker": "SY",
     "flags": [
       "assets=liab+equity"
@@ -2266,12 +2272,6 @@
   },
   {
     "ticker": "HTCO",
-    "flags": [
-      "assets=liab+equity"
-    ]
-  },
-  {
-    "ticker": "IIIV",
     "flags": [
       "assets=liab+equity"
     ]
