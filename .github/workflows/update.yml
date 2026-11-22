@@ -13,10 +13,10 @@ on:
   schedule:
     - cron: '10 22 * * 1-5'   # Mon–Fri 22:10 UTC (after close): prices only
     - cron: '10 8 * * 0'      # Sunday  08:10 UTC: full (fundamentals + prices)
-    - cron: '47 11 * * 2-6'   # Tue–Sat 11:47 UTC: safety-net prices run. GitHub
-                              # sometimes drops a scheduled run outright (Fri
-                              # 2026-11-21 never fired); this catches the missed
-                              # close. Harmless when the first run worked.
+    - cron: '47 11 * * 2-6'   # Tue–Sat 11:47 UTC: safety-net prices run in case
+                              # GitHub drops a scheduled run outright (it can,
+                              # under load). Commits nothing when the first run
+                              # already captured the close.
   workflow_dispatch:
     inputs:
       mode:
